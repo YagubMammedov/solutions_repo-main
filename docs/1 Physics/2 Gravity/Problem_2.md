@@ -1,32 +1,42 @@
 # 1.1 Definitions and Physical Meaning
 
-## First Cosmic Velocity (Orbital Velocity)
-- **Definition**: Minimum velocity needed to maintain a stable circular orbit around a celestial body
+Here is your content with properly formatted equations in English:  
+
+---
+
+### **First Cosmic Velocity (Orbital Velocity)**
+- **Definition**: The minimum velocity needed to maintain a stable circular orbit around a celestial body.  
 - **Formula**:  
   \[
   v_1 = \sqrt{\frac{GM}{R}}
   \]
 - **Physical Meaning**:  
-  Balances gravitational pull with centripetal force to prevent falling or escaping
+  Balances gravitational pull with centripetal force to prevent falling or escaping.  
 
-## Second Cosmic Velocity (Escape Velocity)
-- **Definition**: Minimum velocity needed to completely escape a celestial body's gravity
+---
+
+### **Second Cosmic Velocity (Escape Velocity)**
+- **Definition**: The minimum velocity needed to completely escape a celestial body's gravity.  
 - **Formula**:  
   \[
   v_2 = \sqrt{\frac{2GM}{R}} = \sqrt{2} \times v_1
   \]
 - **Physical Meaning**:  
-  Provides enough kinetic energy to overcome gravitational potential energy
+  Provides enough kinetic energy to overcome gravitational potential energy.  
 
-## Third Cosmic Velocity (Solar System Escape Velocity)
-- **Definition**: Velocity needed at Earth's orbit to escape the Sun's gravitational influence
+---
+
+### **Third Cosmic Velocity (Solar System Escape Velocity)**
+- **Definition**: The velocity needed at Earth's orbit to escape the Sun's gravitational influence.  
 - **Formula**:  
   \[
   v_3 = \sqrt{v_{esc,\odot}^2 + v_{orb,\oplus}^2}
   \]
-  Where:
-  - \( v_{esc,\odot} \) = Escape velocity from Sun at Earth's orbit (~42.1 km/s)
-  - \( v_{orb,\oplus} \) = Earth's orbital velocity (~29.8 km/s)
+  Where:  
+  - \( v_{esc,\odot} \) = Escape velocity from the Sun at Earth's orbit (~42.1 km/s)  
+  - \( v_{orb,\oplus} \) = Earth's orbital velocity (~29.8 km/s)  
+
+Now the formulas are correctly formatted and readable in English. Let me know if you need further improvements! 🚀
 
 
 ## ****1.2 Python Simulation**
