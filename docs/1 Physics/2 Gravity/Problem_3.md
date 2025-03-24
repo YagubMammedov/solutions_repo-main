@@ -1,16 +1,10 @@
 # Problem 3
 # **Trajectories of Freely Released Payloads Near Earth**
 
-## **1. Physics & Mathematical Formulation**
+## **3.1.1 Physics & Mathematical Formulation**
 
 ### **Governing Equations**
-The motion follows Newton's Law of Gravitation:
-```math
-\mathbf{F} = -\frac{GMm}{r^2} \hat{r}
-```
-Leading to the differential equations:
-```math
-\frac{d^2x}{dt^2} = -\frac{GMx}{r^3}, \quad \frac{d^2y}{dt^2} = -\frac{GMy}{r^3}
+
 ```
 where \( r = \sqrt{x^2 + y^2} \).
 
@@ -23,7 +17,7 @@ where \( r = \sqrt{x^2 + y^2} \).
 
 ---
 
-## **2. Python Simulation**
+## **3.1.2 Python Simulation**
 
 ```python
 import numpy as np
@@ -65,10 +59,9 @@ plt.xlabel('x (km)'); plt.ylabel('y (km)')
 plt.legend(); plt.grid(); plt.axis('equal')
 plt.show()
 ```
-
 ---
 
-## **3. Key Results & Visualization**
+## **3.1.3 Key Results & Visualization**
 
 ### **Simulation Output**
 ![alt text](image-20.png)
@@ -79,33 +72,8 @@ plt.show()
 - **Escape (11.0 km/s)**: Parabolic departure
 - **Hyperbolic (5.83 km/s)**: High-velocity flyby
 
-### **Energy Analysis**
-```python
-def orbital_energy(state):
-    x, y, vx, vy = state
-    r = np.sqrt(x**2 + y**2)
-    v = np.sqrt(vx**2 + vy**2)
-    KE = 0.5 * v**2
-    PE = -G * M_earth / r
-    return KE + PE  # J/kg
 
-for i, ic in enumerate(conditions):
-    E = orbital_energy(ic)
-    print(f"Case {i+1}: Energy = {E/1e6:.2f} MJ/kg → ", 
-          "Elliptical" if E < 0 else "Parabolic" if E == 0 else "Hyperbolic")
-```
-
-**Output:**
-```
-Case 1: Energy = -30.44 MJ/kg → Elliptical
-Case 2: Energy = -15.18 MJ/kg → Elliptical  
-Case 3: Energy = 2.97 MJ/kg → Hyperbolic
-Case 4: Energy = 18.45 MJ/kg → Hyperbolic
-```
-
----
-
-## **4. Applications**
+## **3.1.4 Applications**
 
 ### **Space Mission Scenarios**
 1. **Satellite Deployment**
@@ -127,7 +95,7 @@ Case 4: Energy = 18.45 MJ/kg → Hyperbolic
 
 ---
 
-## **5. Conclusion**
+## **3.1.5 Conclusion**
 
 1. **Trajectory Types**: Determined by initial velocity and position
 2. **Energy Threshold**: 0 MJ/kg separates bound/unbound orbits
@@ -138,3 +106,61 @@ Case 4: Energy = 18.45 MJ/kg → Hyperbolic
 - Add J2 oblateness effects
 - Incorporate atmospheric drag models
 - Simulate multi-body gravity (Moon perturbations)
+
+
+## **3.2.1 
+Here are the essential orbital mechanics formulas in clean mathematical notation:
+
+### Core Equations of Orbital Motion
+
+1. **Newton's Gravitational Law**
+   \[
+   F = G\frac{m_1 m_2}{r^2}
+   \]
+
+2. **Circular Orbit Velocity**
+   \[
+   v = \sqrt{\frac{GM}{r}}
+   \]
+
+3. **Escape Velocity** 
+   \[
+   v_e = \sqrt{\frac{2GM}{r}}
+   \]
+
+4. **Orbital Energy**
+   \[
+   E = \frac{v^2}{2} - \frac{GM}{r}
+   \]
+
+5. **Orbital Period (Kepler's 3rd Law)**
+   \[
+   T = 2\pi\sqrt{\frac{r^3}{GM}}
+   \]
+
+6. **Vis-Viva Equation**
+   \[
+   v^2 = GM\left(\frac{2}{r} - \frac{1}{a}\right)
+   \]
+
+### Key Parameters:
+- \( G \) = 6.674×10⁻¹¹ m³/kg/s² (Gravitational constant)
+- \( M \) = Central body mass (kg)
+- \( r \) = Orbital radius (m)
+- \( a \) = Semi-major axis (m)
+- \( v \) = Orbital velocity (m/s)
+
+These equations will:
+- Copy perfectly to any Markdown editor
+- Render correctly in Jupyter/VSCode/GitHub
+- Maintain clean formatting
+- Work in LaTeX documents
+
+Would you like me to:
+1. Add explanations for each equation?
+2. Provide sample calculations?
+3. Show how these relate to the Python code?
+
+## **3.2.2 Visualization & Analysis
+Static Trajectory Plot
+![alt text](image-21.png)
