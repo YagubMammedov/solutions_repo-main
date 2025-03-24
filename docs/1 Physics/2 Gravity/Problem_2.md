@@ -409,22 +409,33 @@ Here is your Markdown document for **Problem 2: Escape Velocities and Cosmic Vel
 
 ---
 
-Here’s how you can format your equations in a markdown-friendly way, using LaTeX syntax for math rendering.
+Here is the correct markdown code for rendering the formulas using LaTeX:
 
-### **Orbital Velocity (1st Cosmic)**
+```markdown
+#### **Orbital Velocity (1st Cosmic)**
 ```math
 v_{orb} = \sqrt{\frac{GM}{r}}
 ```
 
-### **Escape Velocity (2nd Cosmic)**
+#### **Escape Velocity (2nd Cosmic)**
 ```math
 v_{esc} = \sqrt{\frac{2GM}{r}} = \sqrt{2} \times v_{orb}
 ```
 
-### **Solar System Escape (3rd Cosmic)**
+#### **Solar System Escape (3rd Cosmic)**
 ```math
 v_{3} = \sqrt{v_{esc}^2 + (v_{planet} - v_{sun\_esc})^2}
 ```
+
+```
+
+### Important Notes:
+- Make sure that the markdown environment you're using supports rendering LaTeX (like Jupyter Notebooks or GitHub).
+- The math code should be placed between triple backticks with `math` specified, like so: ```math
+... equations ...
+``` to ensure it gets rendered correctly.
+
+Let me know if you'd like any further help!
 
 ### Explanation:
 - These formulas are in **inline math mode** for Markdown.
