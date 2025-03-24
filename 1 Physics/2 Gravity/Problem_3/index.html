@@ -130,49 +130,23 @@
 <div class="section" itemprop="articleBody">
 <h1 id="problem-3">Problem 3</h1>
 <h1 id="trajectories-of-freely-released-payloads-near-earth"><strong>Trajectories of Freely Released Payloads Near Earth</strong></h1>
-<h2 id="1-physics-mathematical-formulation"><strong>1. Physics &amp; Mathematical Formulation</strong></h2>
+<h2 id="311-physics-mathematical-formulation"><strong>3.1.1 Physics &amp; Mathematical Formulation</strong></h2>
 <h3 id="governing-equations"><strong>Governing Equations</strong></h3>
-<p>The motion follows Newton's Law of Gravitation:</p>
-<pre><code class="language-math">\mathbf{F} = -\frac{GMm}{r^2} \hat{r}
-</code></pre>
-<p>Leading to the differential equations:</p>
-<pre><code class="language-math">\frac{d^2x}{dt^2} = -\frac{GMx}{r^3}, \quad \frac{d^2y}{dt^2} = -\frac{GMy}{r^3}
-</code></pre>
-<p>where <span class="arithmatex">\( r = \sqrt{x^2 + y^2} \)</span>.</p>
-<h3 id="trajectory-types"><strong>Trajectory Types</strong></h3>
-<table>
-<thead>
-<tr>
-<th><strong>Energy Condition</strong></th>
-<th><strong>Trajectory</strong></th>
-<th><strong>Shape</strong></th>
-<th><strong>Example</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="arithmatex">\( E &lt; 0 \)</span></td>
-<td>Bound</td>
-<td>Elliptical</td>
-<td>Satellites in LEO</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\( E = 0 \)</span></td>
-<td>Marginally Bound</td>
-<td>Parabolic</td>
-<td>Escape trajectory</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\( E &gt; 0 \)</span></td>
-<td>Unbound</td>
-<td>Hyperbolic</td>
-<td>Interplanetary probes</td>
-</tr>
-</tbody>
-</table>
-<hr/>
-<h2 id="2-python-simulation"><strong>2. Python Simulation</strong></h2>
-<pre><code class="language-python">import numpy as np
+<pre><code>where \( r = \sqrt{x^2 + y^2} \).
+
+### **Trajectory Types**
+| **Energy Condition** | **Trajectory**  | **Shape**       | **Example**            |
+|----------------------|-----------------|-----------------|------------------------|
+| \( E &lt; 0 \)          | Bound           | Elliptical      | Satellites in LEO       |
+| \( E = 0 \)          | Marginally Bound| Parabolic       | Escape trajectory       |
+| \( E &gt; 0 \)          | Unbound         | Hyperbolic      | Interplanetary probes   |
+
+---
+
+## **3.1.2 Python Simulation**
+
+```python
+import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
 
@@ -212,7 +186,7 @@ plt.legend(); plt.grid(); plt.axis('equal')
 plt.show()
 </code></pre>
 <hr/>
-<h2 id="3-key-results-visualization"><strong>3. Key Results &amp; Visualization</strong></h2>
+<h2 id="313-key-results-visualization"><strong>3.1.3 Key Results &amp; Visualization</strong></h2>
 <h3 id="simulation-output"><strong>Simulation Output</strong></h3>
 <p><img alt="alt text" src="../image-20.png"/></p>
 <p><strong>Interpretation:</strong>
@@ -220,28 +194,7 @@ plt.show()
 - <strong>Elliptical (9.0 km/s)</strong>: Higher apoapsis
 - <strong>Escape (11.0 km/s)</strong>: Parabolic departure
 - <strong>Hyperbolic (5.83 km/s)</strong>: High-velocity flyby</p>
-<h3 id="energy-analysis"><strong>Energy Analysis</strong></h3>
-<pre><code class="language-python">def orbital_energy(state):
-    x, y, vx, vy = state
-    r = np.sqrt(x**2 + y**2)
-    v = np.sqrt(vx**2 + vy**2)
-    KE = 0.5 * v**2
-    PE = -G * M_earth / r
-    return KE + PE  # J/kg
-
-for i, ic in enumerate(conditions):
-    E = orbital_energy(ic)
-    print(f"Case {i+1}: Energy = {E/1e6:.2f} MJ/kg → ", 
-          "Elliptical" if E &lt; 0 else "Parabolic" if E == 0 else "Hyperbolic")
-</code></pre>
-<p><strong>Output:</strong></p>
-<pre><code>Case 1: Energy = -30.44 MJ/kg → Elliptical
-Case 2: Energy = -15.18 MJ/kg → Elliptical  
-Case 3: Energy = 2.97 MJ/kg → Hyperbolic
-Case 4: Energy = 18.45 MJ/kg → Hyperbolic
-</code></pre>
-<hr/>
-<h2 id="4-applications"><strong>4. Applications</strong></h2>
+<h2 id="314-applications"><strong>3.1.4 Applications</strong></h2>
 <h3 id="space-mission-scenarios"><strong>Space Mission Scenarios</strong></h3>
 <ol>
 <li><strong>Satellite Deployment</strong></li>
@@ -269,7 +222,7 @@ Case 4: Energy = 18.45 MJ/kg → Hyperbolic
 <li><strong>Payload mass</strong> irrelevant in vacuum (all objects fall equally)</li>
 </ul>
 <hr/>
-<h2 id="5-conclusion"><strong>5. Conclusion</strong></h2>
+<h2 id="315-conclusion"><strong>3.1.5 Conclusion</strong></h2>
 <ol>
 <li><strong>Trajectory Types</strong>: Determined by initial velocity and position</li>
 <li><strong>Energy Threshold</strong>: 0 MJ/kg separates bound/unbound orbits</li>
@@ -280,6 +233,67 @@ Case 4: Energy = 18.45 MJ/kg → Hyperbolic
 - Add J2 oblateness effects
 - Incorporate atmospheric drag models
 - Simulate multi-body gravity (Moon perturbations)</p>
+<h2 id="321">**3.2.1</h2>
+<p>Here are the essential orbital mechanics formulas in clean mathematical notation:</p>
+<h3 id="core-equations-of-orbital-motion">Core Equations of Orbital Motion</h3>
+<ol>
+<li>
+<p><strong>Newton's Gravitational Law</strong>
+   [
+   F = G\frac{m_1 m_2}{r^2}
+   ]</p>
+</li>
+<li>
+<p><strong>Circular Orbit Velocity</strong>
+   [
+   v = \sqrt{\frac{GM}{r}}
+   ]</p>
+</li>
+<li>
+<p><strong>Escape Velocity</strong> 
+   [
+   v_e = \sqrt{\frac{2GM}{r}}
+   ]</p>
+</li>
+<li>
+<p><strong>Orbital Energy</strong>
+   [
+   E = \frac{v^2}{2} - \frac{GM}{r}
+   ]</p>
+</li>
+<li>
+<p><strong>Orbital Period (Kepler's 3rd Law)</strong>
+   [
+   T = 2\pi\sqrt{\frac{r^3}{GM}}
+   ]</p>
+</li>
+<li>
+<p><strong>Vis-Viva Equation</strong>
+   [
+   v^2 = GM\left(\frac{2}{r} - \frac{1}{a}\right)
+   ]</p>
+</li>
+</ol>
+<h3 id="key-parameters">Key Parameters:</h3>
+<ul>
+<li><span class="arithmatex">\( G \)</span> = 6.674×10⁻¹¹ m³/kg/s² (Gravitational constant)</li>
+<li><span class="arithmatex">\( M \)</span> = Central body mass (kg)</li>
+<li><span class="arithmatex">\( r \)</span> = Orbital radius (m)</li>
+<li><span class="arithmatex">\( a \)</span> = Semi-major axis (m)</li>
+<li><span class="arithmatex">\( v \)</span> = Orbital velocity (m/s)</li>
+</ul>
+<p>These equations will:
+- Copy perfectly to any Markdown editor
+- Render correctly in Jupyter/VSCode/GitHub
+- Maintain clean formatting
+- Work in LaTeX documents</p>
+<p>Would you like me to:
+1. Add explanations for each equation?
+2. Provide sample calculations?
+3. Show how these relate to the Python code?</p>
+<h2 id="322-visualization-analysis">**3.2.2 Visualization &amp; Analysis</h2>
+<p>Static Trajectory Plot
+<img alt="alt text" src="../image-21.png"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
