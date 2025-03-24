@@ -109,39 +109,66 @@ plt.show()
 
 
 ## **3.2.1 
-Here are the essential orbital mechanics formulas in clean mathematical notation:
+Here are the orbital mechanics formulas in proper mathematical notation:
 
-### Core Equations of Orbital Motion
+### **1. Newton's Law of Universal Gravitation**
+\[
+\mathbf{F} = -G \frac{m_1 m_2}{r^2} \mathbf{\hat{r}}
+\]
 
-1. **Newton's Gravitational Law**
-   \[
-   F = G\frac{m_1 m_2}{r^2}
-   \]
+### **2. Circular Orbital Velocity**
+\[
+v_{\text{circ}} = \sqrt{\frac{GM}{r}}
+\]
 
-2. **Circular Orbit Velocity**
-   \[
-   v = \sqrt{\frac{GM}{r}}
-   \]
+### **3. Escape Velocity**
+\[
+v_{\text{esc}} = \sqrt{\frac{2GM}{r}} = \sqrt{2} \cdot v_{\text{circ}}
+\]
 
-3. **Escape Velocity** 
-   \[
-   v_e = \sqrt{\frac{2GM}{r}}
-   \]
+### **4. Specific Orbital Energy**
+\[
+\varepsilon = \frac{v^2}{2} - \frac{GM}{r}
+\]
 
-4. **Orbital Energy**
-   \[
-   E = \frac{v^2}{2} - \frac{GM}{r}
-   \]
+### **5. Orbital Period (Kepler's Third Law)**
+\[
+T = 2\pi \sqrt{\frac{a^3}{GM}}
+\]
 
-5. **Orbital Period (Kepler's 3rd Law)**
-   \[
-   T = 2\pi\sqrt{\frac{r^3}{GM}}
-   \]
+### **6. Vis-Viva Equation**
+\[
+v^2 = GM \left( \frac{2}{r} - \frac{1}{a} \right)
+\]
 
-6. **Vis-Viva Equation**
-   \[
-   v^2 = GM\left(\frac{2}{r} - \frac{1}{a}\right)
-   \]
+### **7. Eccentricity Vector**
+\[
+\mathbf{e} = \frac{\mathbf{v} \times \mathbf{h}}{GM} - \frac{\mathbf{r}}{r}
+\]
+
+### **8. Angular Momentum**
+\[
+\mathbf{h} = \mathbf{r} \times \mathbf{v}
+\]
+
+**Where:**
+- \( G \) = Gravitational constant (6.67430 × 10⁻¹¹ m³ kg⁻¹ s⁻²)
+- \( M \) = Mass of central body (kg)
+- \( r \) = Distance between centers (m)
+- \( a \) = Semi-major axis (m)
+- \( v \) = Orbital velocity (m/s)
+- \( \mathbf{r}, \mathbf{v} \) = Position and velocity vectors
+
+These formulas are properly formatted using LaTeX mathematical notation and will:
+1. Copy correctly to any technical document
+2. Render properly in Markdown/LaTeX editors
+3. Maintain clear mathematical formatting
+4. Be easily editable for different scenarios
+
+Would you like me to:
+1. Add dimensional analysis for each equation?
+2. Provide concrete examples with Earth orbital parameters?
+3. Show the derivation of any particular formula?
 
 ### Key Parameters:
 - \( G \) = 6.674×10⁻¹¹ m³/kg/s² (Gravitational constant)
@@ -156,10 +183,6 @@ These equations will:
 - Maintain clean formatting
 - Work in LaTeX documents
 
-Would you like me to:
-1. Add explanations for each equation?
-2. Provide sample calculations?
-3. Show how these relate to the Python code?
 
 ## **3.2.2 Visualization & Analysis
 Static Trajectory Plot
