@@ -56,7 +56,7 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Gravity: Kepler's Third Law (T² ∝ r³)</a>
 <ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="#1-derivation-for-circular-orbits">1. Derivation for Circular Orbits</a>
+<li class="toctree-l3"><a class="reference internal" href="#111-derivation-for-circular-orbits">1.1.1 Derivation for Circular Orbits</a>
 <ul>
 <li class="toctree-l4"><a class="reference internal" href="#force-balance-equation">Force Balance Equation</a>
 </li>
@@ -66,9 +66,9 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#2-python-simulation">2. Python Simulation</a>
+<li class="toctree-l3"><a class="reference internal" href="#112-python-simulation">1.1.2. Python Simulation</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#3-graphical-representations">3. Graphical Representations</a>
+<li class="toctree-l3"><a class="reference internal" href="#113-graphical-representations">1.1.3. Graphical Representations</a>
 <ul>
 <li class="toctree-l4"><a class="reference internal" href="#figure-1-circular-orbit">Figure 1: Circular Orbit</a>
 </li>
@@ -76,7 +76,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#4-extension-to-elliptical-orbits">4. Extension to Elliptical Orbits</a>
+<li class="toctree-l3"><a class="reference internal" href="#114-extension-to-elliptical-orbits">1.1.4. Extension to Elliptical Orbits</a>
 <ul>
 <li class="toctree-l4"><a class="reference internal" href="#generalized-keplers-third-law">Generalized Kepler's Third Law</a>
 </li>
@@ -84,7 +84,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#5-astronomical-applications">5. Astronomical Applications</a>
+<li class="toctree-l3"><a class="reference internal" href="#115-astronomical-applications">1.1.5. Astronomical Applications</a>
 <ul>
 <li class="toctree-l4"><a class="reference internal" href="#solar-system-examples">Solar System Examples</a>
 </li>
@@ -92,7 +92,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#6-conclusion">6. Conclusion</a>
+<li class="toctree-l3"><a class="reference internal" href="#116-conclusion">1.1.6. Conclusion</a>
 </li>
 </ul>
 </li>
@@ -167,7 +167,7 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="gravity-keplers-third-law-t2-r3"><strong>Gravity: Kepler's Third Law (T² ∝ r³)</strong></h1>
-<h2 id="1-derivation-for-circular-orbits"><strong>1. Derivation for Circular Orbits</strong></h2>
+<h2 id="111-derivation-for-circular-orbits"><strong>1.1.1 Derivation for Circular Orbits</strong></h2>
 <h3 id="force-balance-equation"><strong>Force Balance Equation</strong></h3>
 <p>For a circular orbit, gravitational force equals centripetal force:</p>
 <div class="arithmatex">\[
@@ -186,7 +186,7 @@ v = \frac{2\pi r}{T}
 \boxed{T^2 = \left(\frac{4\pi^2}{GM}\right) r^3}
 ]</p>
 <hr/>
-<h2 id="2-python-simulation"><strong>2. Python Simulation</strong></h2>
+<h2 id="112-python-simulation"><strong>1.1.2. Python Simulation</strong></h2>
 <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 from scipy.constants import G
@@ -220,7 +220,7 @@ plt.show()
 </code></pre>
 <hr/>
 <p><img alt="alt text" src="../image-1.png"/></p>
-<h2 id="3-graphical-representations"><strong>3. Graphical Representations</strong></h2>
+<h2 id="113-graphical-representations"><strong>1.1.3. Graphical Representations</strong></h2>
 <h3 id="figure-1-circular-orbit"><strong>Figure 1: Circular Orbit</strong></h3>
 <p><img alt="Circular Orbit" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Circular_orbit.gif/220px-Circular_orbit.gif"/></p>
 <h3 id="figure-2-t2-vs-r3-relationship"><strong>Figure 2: T² vs r³ Relationship</strong></h3>
@@ -228,7 +228,7 @@ plt.show()
 </code></pre>
 <p><em>(The right plot shows a perfect linear relationship confirming T² ∝ r³)</em></p>
 <hr/>
-<h2 id="4-extension-to-elliptical-orbits"><strong>4. Extension to Elliptical Orbits</strong></h2>
+<h2 id="114-extension-to-elliptical-orbits"><strong>1.1.4. Extension to Elliptical Orbits</strong></h2>
 <h3 id="generalized-keplers-third-law"><strong>Generalized Kepler's Third Law</strong></h3>
 <div class="arithmatex">\[
 \boxed{T^2 = \frac{4\pi^2 a^3}{G(M+m)}}
@@ -265,7 +265,7 @@ plt.show()
 </tbody>
 </table>
 <hr/>
-<h2 id="5-astronomical-applications"><strong>5. Astronomical Applications</strong></h2>
+<h2 id="115-astronomical-applications"><strong>1.1.5. Astronomical Applications</strong></h2>
 <h3 id="solar-system-examples"><strong>Solar System Examples</strong></h3>
 <table>
 <thead>
@@ -304,7 +304,7 @@ plt.show()
 <li><strong>Space Mission Planning</strong>: Calculate transfer orbits between planets</li>
 </ol>
 <hr/>
-<h2 id="6-conclusion"><strong>6. Conclusion</strong></h2>
+<h2 id="116-conclusion"><strong>1.1.6. Conclusion</strong></h2>
 <ul>
 <li>Kepler's Third Law fundamentally links orbital geometry with dynamics</li>
 <li>Verified numerically through Python simulation</li>
@@ -312,13 +312,13 @@ plt.show()
 <li>Essential tool for modern astronomy and space exploration</li>
 </ul>
 <h1 id="astronomical-implications-of-keplers-third-law"><strong>Astronomical Implications of Kepler's Third Law</strong></h1>
-<h2 id="1-fundamental-importance-in-astronomy"><strong>1. Fundamental Importance in Astronomy</strong></h2>
+<h2 id="121-fundamental-importance-in-astronomy"><strong>1.2.1 Fundamental Importance in Astronomy</strong></h2>
 <p>Kepler's Third Law (T² ∝ r³) serves as a fundamental tool for:
 - Determining celestial masses
 - Measuring astronomical distances
 - Verifying gravitational theories
 - Planning space missions</p>
-<h2 id="2-key-applications"><strong>2. Key Applications</strong></h2>
+<h2 id="122-key-applications"><strong>1.2.2. Key Applications</strong></h2>
 <h3 id="a-calculating-planetary-masses"><strong>A. Calculating Planetary Masses</strong></h3>
 <p><strong>Method:</strong><br/>
 For a moon orbiting a planet:
@@ -349,7 +349,7 @@ Binary star systems - the only direct method to measure stellar masses.</p>
 |-----------|--------------|---------------------|--------------------|
 | Kepler-186f | 129.9       | 0.432              | 1.44              |
 | TRAPPIST-1e | 6.10        | 0.038              | 0.62              |</p>
-<h2 id="3-python-simulation-mass-distance-calculator"><strong>3. Python Simulation: Mass-Distance Calculator</strong></h2>
+<h2 id="123-python-simulation-mass-distance-calculator"><strong>1.2.3. Python Simulation: Mass-Distance Calculator</strong></h2>
 <pre><code class="language-python">import numpy as np
 from scipy.constants import G
 
@@ -365,7 +365,7 @@ print(f"Calculated Sun mass: {calculate_mass(r_earth, T_earth):.2e} kg")
 <p><strong>Output:</strong><br/>
 <code>Calculated Sun mass: 1.99e+30 kg</code><br/>
 <em>(Matches accepted value of 1.989×10³⁰ kg)</em></p>
-<h2 id="4-graphical-representations"><strong>4. Graphical Representations</strong></h2>
+<h2 id="124-graphical-representations"><strong>1.2.4. Graphical Representations</strong></h2>
 <h3 id="figure-1-solar-system-verification"><strong>Figure 1: Solar System Verification</strong></h3>
 <p><img alt="Solar System Log-Log Plot" src="https://www.researchgate.net/profile/Michael-Roman/publication/335920909/figure/fig1/AS:805370845818880@1568668312804/Keplers-Third-Law-for-the-Planets-of-the-Solar-System.ppm"/></p>
 <h3 id="figure-2-exoplanet-period-distance-relation"><strong>Figure 2: Exoplanet Period-Distance Relation</strong></h3>
@@ -383,7 +383,7 @@ plt.grid(which='both')
 plt.show()
 </code></pre>
 <p><img alt="alt text" src="../image-2.png"/></p>
-<h2 id="5-extension-to-complex-systems"><strong>5. Extension to Complex Systems</strong></h2>
+<h2 id="125-extension-to-complex-systems"><strong>1.2.5. Extension to Complex Systems</strong></h2>
 <h3 id="a-elliptical-orbits"><strong>A. Elliptical Orbits</strong></h3>
 <p>[
 T^2 = \frac{4\pi^2 a^3}{G(M+m)}
@@ -398,7 +398,7 @@ Where <strong>a</strong> = semi-major axis</p>
 - Requires numerical methods (N-body simulations)
 - Perturbation theory needed for precise calculations
 - Chaotic effects in dense systems</p>
-<h2 id="6-modern-astronomical-applications"><strong>6. Modern Astronomical Applications</strong></h2>
+<h2 id="126-modern-astronomical-applications"><strong>1.2.6. Modern Astronomical Applications</strong></h2>
 <table>
 <thead>
 <tr>
@@ -425,7 +425,7 @@ Where <strong>a</strong> = semi-major axis</p>
 </tr>
 </tbody>
 </table>
-<h2 id="7-conclusion"><strong>7. Conclusion</strong></h2>
+<h2 id="127-conclusion"><strong>1.2.7. Conclusion</strong></h2>
 <ul>
 <li><strong>Mass Measurement:</strong> Primary method for determining celestial object masses</li>
 <li><strong>Distance Scale:</strong> Establishes cosmic distance ladder rungs</li>
