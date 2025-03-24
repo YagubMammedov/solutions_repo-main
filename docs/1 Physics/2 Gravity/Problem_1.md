@@ -598,5 +598,5 @@ This implementation provides:
 - Multiple visualization methods (static, animated, 3D)
 - Verification of Kepler's Third Law
 - Energy conservation analysis
-- Support for various orbital parameters
+- Support for various orbital parameter
 
