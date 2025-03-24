@@ -1,6 +1,6 @@
 # **Gravity: Kepler's Third Law (T² ∝ r³)**
 
-## **1. Derivation for Circular Orbits**
+## **1.1.1 Derivation for Circular Orbits**
 
 ### **Force Balance Equation**
 For a circular orbit, gravitational force equals centripetal force:
@@ -26,7 +26,7 @@ v = \frac{2\pi r}{T}
 
 ---
 
-## **2. Python Simulation**
+## **1.1.2. Python Simulation**
 
 ```python
 import numpy as np
@@ -64,7 +64,7 @@ plt.show()
 ---
 ![alt text](image-1.png)
 
-## **3. Graphical Representations**
+## **1.1.3. Graphical Representations**
 
 ### **Figure 1: Circular Orbit**
 ![Circular Orbit](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Circular_orbit.gif/220px-Circular_orbit.gif)
@@ -77,7 +77,7 @@ plt.show()
 
 ---
 
-## **4. Extension to Elliptical Orbits**
+## **1.1.4. Extension to Elliptical Orbits**
 
 ### **Generalized Kepler's Third Law**
 \[
@@ -99,7 +99,7 @@ Where:
 
 ---
 
-## **5. Astronomical Applications**
+## **1.1.5. Astronomical Applications**
 
 ### **Solar System Examples**
 | Body       | Orbital Radius (AU) | Period (years) | T²/r³ |
@@ -115,7 +115,7 @@ Where:
 
 ---
 
-## **6. Conclusion**
+## **1.1.6. Conclusion**
 - Kepler's Third Law fundamentally links orbital geometry with dynamics
 - Verified numerically through Python simulation
 - Generalizes to elliptical orbits via semi-major axis
@@ -123,14 +123,14 @@ Where:
 
 # **Astronomical Implications of Kepler's Third Law**
 
-## **1. Fundamental Importance in Astronomy**
+## **1.2.1 Fundamental Importance in Astronomy**
 Kepler's Third Law (T² ∝ r³) serves as a fundamental tool for:
 - Determining celestial masses
 - Measuring astronomical distances
 - Verifying gravitational theories
 - Planning space missions
 
-## **2. Key Applications**
+## **1.2.2. Key Applications**
 
 ### **A. Calculating Planetary Masses**
 **Method:**  
@@ -168,7 +168,7 @@ Binary star systems - the only direct method to measure stellar masses.
 | Kepler-186f | 129.9       | 0.432              | 1.44              |
 | TRAPPIST-1e | 6.10        | 0.038              | 0.62              |
 
-## **3. Python Simulation: Mass-Distance Calculator**
+## **1.2.3. Python Simulation: Mass-Distance Calculator**
 
 ```python
 import numpy as np
@@ -188,7 +188,7 @@ print(f"Calculated Sun mass: {calculate_mass(r_earth, T_earth):.2e} kg")
 `Calculated Sun mass: 1.99e+30 kg`  
 *(Matches accepted value of 1.989×10³⁰ kg)*
 
-## **4. Graphical Representations**
+## **1.2.4. Graphical Representations**
 
 ### **Figure 1: Solar System Verification**
 ![Solar System Log-Log Plot](https://www.researchgate.net/profile/Michael-Roman/publication/335920909/figure/fig1/AS:805370845818880@1568668312804/Keplers-Third-Law-for-the-Planets-of-the-Solar-System.ppm)
@@ -209,7 +209,7 @@ plt.grid(which='both')
 plt.show()
 ```
 ![alt text](image-2.png)
-## **5. Extension to Complex Systems**
+## **1.2.5. Extension to Complex Systems**
 
 ### **A. Elliptical Orbits**
 \[
@@ -228,7 +228,7 @@ Where **a** = semi-major axis
 - Perturbation theory needed for precise calculations
 - Chaotic effects in dense systems
 
-## **6. Modern Astronomical Applications**
+## **1.2.6. Modern Astronomical Applications**
 
 | Application | Kepler's Law Usage | Precision Required |
 |-------------|--------------------|--------------------|
@@ -236,7 +236,7 @@ Where **a** = semi-major axis
 | Galaxy Rotation Curves | Dark matter studies | 1% distance accuracy |
 | Pulsar Timing | Gravity wave detection | 10⁻¹⁵ timing |
 
-## **7. Conclusion**
+## **1.2.7. Conclusion**
 - **Mass Measurement:** Primary method for determining celestial object masses
 - **Distance Scale:** Establishes cosmic distance ladder rungs
 - **Exoplanet Science:** Foundation for characterizing alien worlds
