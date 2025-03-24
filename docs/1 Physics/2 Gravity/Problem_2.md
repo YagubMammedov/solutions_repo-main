@@ -178,44 +178,6 @@ Where:
 - \( v_{\text{orb,⊕}} \): Earth's orbital speed (~29.8 km/s)
 ![alt text](image-11.png)
 
-## **1.2.2 Parameter Sensitivity Analysis**
-
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.constants import G
-
-# Parameter ranges
-masses = np.logspace(22, 30, 50)  # 10²² to 10³⁰ kg
-radii = np.logspace(6, 8, 50)     # 10⁶ to 10⁸ m
-
-# Velocity surface calculation
-M, R = np.meshgrid(masses, radii)
-V_escape = np.sqrt(2*G*M/R)/1000  # km/s
-
-# 3D Plot
-fig = plt.figure(figsize=(12,8))
-ax = fig.add_subplot(111, projection='3d')
-surf = ax.plot_surface(np.log10(M), np.log10(R), V_escape, 
-                      cmap='viridis', edgecolor='none')
-ax.set_xlabel('log₁₀(Mass [kg])')
-ax.set_ylabel('log₁₀(Radius [m])')
-ax.set_zlabel('Escape Velocity (km/s)')
-ax.set_title('Escape Velocity Dependence on Mass and Radius')
-fig.colorbar(surf, shrink=0.5, aspect=5)
-plt.show()
-```
-
-![Escape Velocity Surface](https://i.imgur.com/EscapeVelocity3D.png)
-
-**Key Observations:**
-1. **Mass Dominance**: Velocity scales with √M
-2. **Radius Inverse Relationship**: ∝ 1/√r
-3. **Extreme Cases**:
-   - Neutron stars: ~0.5c escape velocity
-   - Gas giants: High mass + large radius → moderate escape velocity
-
----
 
 ## **1.2.3 Comparative Planetary Analysis**
 
@@ -305,72 +267,25 @@ For 1kg payload from Earth surface to LEO:
 
 ## Core Physics Formulas
 
-### First Cosmic Velocity (Orbital)
-```math
-v_1 = \sqrt{\frac{GM}{R}}
-```
+Here is how the formulas will appear if correctly rendered in a Markdown-supported LaTeX environment:
 
-### Second Cosmic Velocity (Escape)
-```math
-v_2 = \sqrt{\frac{2GM}{R}} = \sqrt{2} \times v_1
-```
+### **1. Orbital Velocity (1st Cosmic)**
+\[
+v_{orb} = \sqrt{\frac{GM}{r}}
+\]
 
-### Third Cosmic Velocity (Solar Escape)
-```math
-v_3 = \sqrt{v_{esc}^2 + (v_{orb} - v_{esc})^2}
-```
+### **2. Escape Velocity (2nd Cosmic)**
+\[
+v_{esc} = \sqrt{\frac{2GM}{r}} = \sqrt{2} \times v_{orb}
+\]
 
-## Python Implementation
+### **3. Solar System Escape Velocity (3rd Cosmic)**
+\[
+v_3 = \sqrt{v_{esc}^2 + (v_{planet} - v_{sun\_esc})^2}
+\]
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.constants import G
-
-# Celestial body database
-bodies = {
-    "Earth": {
-        "radius": 6.371e6,      # m
-        "mass": 5.972e24,       # kg
-        "orbital_speed": 29.8e3  # m/s (around Sun)
-    },
-    "Mars": {
-        "radius": 3.390e6,
-        "mass": 6.39e23,
-        "orbital_speed": 24.1e3
-    },
-    "Jupiter": {
-        "radius": 6.991e7,
-        "mass": 1.898e27,
-        "orbital_speed": 13.1e3
-    }
-}
-
-
+---
 ## Results Visualization
-
-### 1. Velocity Comparison Chart
-
-# Convert to km/s for readability
-names = list(results.keys())
-v1 = [x[0]/1000 for x in results.values()]
-v2 = [x[1]/1000 for x in results.values()]
-v3 = [x[2]/1000 for x in results.values()]
-
-x = np.arange(len(names))
-width = 0.25
-
-plt.figure(figsize=(12,6))
-plt.bar(x - width, v1, width, label='1st Cosmic (Orbital)')
-plt.bar(x, v2, width, label='2nd Cosmic (Escape)')
-plt.bar(x + width, v3, width, label='3rd Cosmic (Solar Escape)')
-
-plt.ylabel('Velocity (km/s)')
-plt.title('Cosmic Velocities Comparison')
-plt.xticks(x, names)
-plt.legend()
-plt.grid(axis='y')
-plt.show()
 ```
 ![alt text](image-14.png)
 
