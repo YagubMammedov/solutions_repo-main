@@ -406,7 +406,7 @@ def plot_orbit(mass=5.972e24, radius=1.496e11, eccentricity=0):
 
 # **Gravity Simulation with Multiple Graphical Outputs**
 
-## **1. Core Orbit Simulation Code**
+## **1.4.1 Core Orbit Simulation Code**
 
 ```python
 import numpy as np
@@ -433,7 +433,7 @@ dt = 86400  # Time step (1 day in seconds)
 steps = 1000  # Number of steps
 ```
 
-## **2. Multiple Visualization Types**
+## ## **1.4.2 Multiple Visualization Types**
 
 ### **A. Standard 2D Orbit Plot**
 ```python
@@ -591,24 +591,6 @@ plt.legend()
 plt.grid()
 plt.show()
 ```
-
-## **3. Complete Graphical Outputs**
-
-### **Output 1: Standard 2D Orbit**
-![2D Orbit Plot](https://i.imgur.com/2DOrbitExample.png)
-
-### **Output 2: Animated Orbit**
-(Embedded HTML5 video animation)
-
-### **Output 3: Kepler's Law Verification**
-![Kepler Verification Plot](https://i.imgur.com/KeplerVerification.png)
-
-### **Output 4: 3D Orbit Visualization**
-![3D Orbit](https://i.imgur.com/3DOrbitExample.png)
-
-### **Output 5: Energy Conservation**
-![Energy Plot](https://i.imgur.com/EnergyConservation.png)
-
 
 ## **5. Conclusion**
 
