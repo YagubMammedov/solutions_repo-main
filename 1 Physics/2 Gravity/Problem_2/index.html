@@ -567,9 +567,6 @@ plt.show()
 </ul>
 <p>Here is your Markdown document for <strong>Problem 2: Escape Velocities and Cosmic Velocities</strong> with detailed explanations, code for simulations, and graphical representations of escape velocities and cosmic velocities:</p>
 <hr/>
-<h1 id="space-velocities-and-escape-formulas"><strong>Space Velocities and Escape Formulas</strong></h1>
-<h2 id="core-formulas-with-visualizations"><strong>Core Formulas with Visualizations</strong></h2>
-<h3 id="1-mathematical-formulas"><strong>1. Mathematical Formulas</strong></h3>
 <p>Here’s how you can format your equations in a markdown-friendly way, using LaTeX syntax for math rendering.</p>
 <h3 id="orbital-velocity-1st-cosmic"><strong>Orbital Velocity (1st Cosmic)</strong></h3>
 <pre><code class="language-math">v_{orb} = \sqrt{\frac{GM}{r}}
@@ -581,6 +578,12 @@ plt.show()
 <pre><code class="language-math">v_{3} = \sqrt{v_{esc}^2 + (v_{planet} - v_{sun\_esc})^2}
 </code></pre>
 <h3 id="explanation">Explanation:</h3>
+<ul>
+<li>These formulas are in <strong>inline math mode</strong> for Markdown.</li>
+<li>Make sure you are using a platform or tool that supports <strong>MathJax</strong> or <strong>KaTeX</strong> (like Jupyter notebooks, GitHub, or certain Markdown editors) to properly render LaTeX.</li>
+</ul>
+<p>Let me know if you have any issues or need further assistance!</p>
+<h3 id="explanation_1">Explanation:</h3>
 <ul>
 <li>These formulas are in <strong>inline math mode</strong> for Markdown.</li>
 <li>Make sure you are using a platform or tool that supports <strong>MathJax</strong> or <strong>KaTeX</strong> (like Jupyter notebooks, GitHub, or certain Markdown editors) to properly render LaTeX.</li>
@@ -627,7 +630,9 @@ plt.ylabel('Velocity (km/s)')
 plt.title('Earth: Velocity vs Altitude')
 plt.grid()
 plt.legend()
+
 ![alt text](image-16.png)
+
 # Plot 3: Energy Requirements
 plt.subplot(1, 3, 3)
 missions = ['LEO', 'GEO', 'Lunar', 'Mars', 'Interstellar']
