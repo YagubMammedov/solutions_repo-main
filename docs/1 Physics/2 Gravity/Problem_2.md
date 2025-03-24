@@ -409,12 +409,6 @@ Here is your Markdown document for **Problem 2: Escape Velocities and Cosmic Vel
 
 ---
 
-# **Space Velocities and Escape Formulas**
-
-## **Core Formulas with Visualizations**
-
-### **1. Mathematical Formulas**
-
 Here’s how you can format your equations in a markdown-friendly way, using LaTeX syntax for math rendering.
 
 ### **Orbital Velocity (1st Cosmic)**
@@ -431,6 +425,12 @@ v_{esc} = \sqrt{\frac{2GM}{r}} = \sqrt{2} \times v_{orb}
 ```math
 v_{3} = \sqrt{v_{esc}^2 + (v_{planet} - v_{sun\_esc})^2}
 ```
+
+### Explanation:
+- These formulas are in **inline math mode** for Markdown.
+- Make sure you are using a platform or tool that supports **MathJax** or **KaTeX** (like Jupyter notebooks, GitHub, or certain Markdown editors) to properly render LaTeX.
+
+Let me know if you have any issues or need further assistance!
 
 ### Explanation:
 - These formulas are in **inline math mode** for Markdown.
@@ -481,7 +481,9 @@ plt.ylabel('Velocity (km/s)')
 plt.title('Earth: Velocity vs Altitude')
 plt.grid()
 plt.legend()
+
 ![alt text](image-16.png)
+
 # Plot 3: Energy Requirements
 plt.subplot(1, 3, 3)
 missions = ['LEO', 'GEO', 'Lunar', 'Mars', 'Interstellar']
