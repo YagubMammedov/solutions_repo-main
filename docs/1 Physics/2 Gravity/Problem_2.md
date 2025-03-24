@@ -415,21 +415,28 @@ Here is your Markdown document for **Problem 2: Escape Velocities and Cosmic Vel
 
 ### **1. Mathematical Formulas**
 
-#### **Orbital Velocity (1st Cosmic)**
+Here’s how you can format your equations in a markdown-friendly way, using LaTeX syntax for math rendering.
+
+### **Orbital Velocity (1st Cosmic)**
 ```math
 v_{orb} = \sqrt{\frac{GM}{r}}
 ```
 
-#### **Escape Velocity (2nd Cosmic)**
+### **Escape Velocity (2nd Cosmic)**
 ```math
 v_{esc} = \sqrt{\frac{2GM}{r}} = \sqrt{2} \times v_{orb}
 ```
 
-#### **Solar System Escape (3rd Cosmic)**
+### **Solar System Escape (3rd Cosmic)**
 ```math
 v_{3} = \sqrt{v_{esc}^2 + (v_{planet} - v_{sun\_esc})^2}
 ```
 
+### Explanation:
+- These formulas are in **inline math mode** for Markdown.
+- Make sure you are using a platform or tool that supports **MathJax** or **KaTeX** (like Jupyter notebooks, GitHub, or certain Markdown editors) to properly render LaTeX.
+
+Let me know if you have any issues or need further assistance!
 ### **2. Interactive Python Visualizations**
 
 ```python
@@ -458,7 +465,9 @@ for name, data in bodies.items():
 plt.ylabel('Velocity (km/s)')
 plt.title('Orbital vs Escape Velocity')
 plt.legend()
+
 ![alt text](image-15.png)
+
 # Plot 2: Velocity vs Altitude (Earth example)
 plt.subplot(1, 3, 2)
 altitudes = np.linspace(0, 1000, 100)*1000  # 0-1000 km
@@ -485,6 +494,7 @@ plt.tight_layout()
 plt.show()
 ```
 ![alt text](image-17.png)
+
 ## **3. Formula Explanations**
 
 ### **Orbital Velocity Derivation**
@@ -509,14 +519,3 @@ plt.show()
 | Mars           | 3.6                     | 5.0                    | 7.8                  |
 | Jupiter        | 42.1                    | 59.5                   | 60.4                 |
 
-## **5. Key Features**
-
-1. **Ready-to-Run Code**: Copy-paste into Python (requires numpy, matplotlib)
-2. **Three Interactive Plots**:
-   - Velocity comparison between bodies
-   - Altitude effects on Earth
-   - Mission energy requirements
-3. **Mathematical Derivations**: Shows physics behind formulas
-4. **Real-World Data**: Uses actual planetary parameters
-
-The visualizations automatically update when you modify the celestial body parameters, making this an excellent tool for educational demonstrations and mission planning.
