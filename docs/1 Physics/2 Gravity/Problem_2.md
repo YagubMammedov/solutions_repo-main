@@ -416,7 +416,6 @@ Here is the correct markdown code for rendering the formulas using LaTeX:
 ```math
 v_{orb} = \sqrt{\frac{GM}{r}}
 ```
-
 #### **Escape Velocity (2nd Cosmic)**
 ```math
 v_{esc} = \sqrt{\frac{2GM}{r}} = \sqrt{2} \times v_{orb}
@@ -524,6 +523,7 @@ plt.show()
 \frac{1}{2}mv^2 = \frac{GMm}{r}
 ```
 3. Solve for v to get escape velocity
+
 
 ## **4. Sample Output Table**
 
