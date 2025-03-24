@@ -567,30 +567,42 @@ plt.show()
 </ul>
 <p>Here is your Markdown document for <strong>Problem 2: Escape Velocities and Cosmic Velocities</strong> with detailed explanations, code for simulations, and graphical representations of escape velocities and cosmic velocities:</p>
 <hr/>
-<p>Here’s how you can format your equations in a markdown-friendly way, using LaTeX syntax for math rendering.</p>
-<h3 id="orbital-velocity-1st-cosmic"><strong>Orbital Velocity (1st Cosmic)</strong></h3>
-<pre><code class="language-math">v_{orb} = \sqrt{\frac{GM}{r}}
+<p>Here is the correct markdown code for rendering the formulas using LaTeX:</p>
+<pre><code class="language-markdown">#### **Orbital Velocity (1st Cosmic)**
+```math
+v_{orb} = \sqrt{\frac{GM}{r}}
 </code></pre>
-<h3 id="escape-velocity-2nd-cosmic"><strong>Escape Velocity (2nd Cosmic)</strong></h3>
+<h4 id="escape-velocity-2nd-cosmic"><strong>Escape Velocity (2nd Cosmic)</strong></h4>
 <pre><code class="language-math">v_{esc} = \sqrt{\frac{2GM}{r}} = \sqrt{2} \times v_{orb}
 </code></pre>
-<h3 id="solar-system-escape-3rd-cosmic"><strong>Solar System Escape (3rd Cosmic)</strong></h3>
+<h4 id="solar-system-escape-3rd-cosmic"><strong>Solar System Escape (3rd Cosmic)</strong></h4>
 <pre><code class="language-math">v_{3} = \sqrt{v_{esc}^2 + (v_{planet} - v_{sun\_esc})^2}
 </code></pre>
-<h3 id="explanation">Explanation:</h3>
-<ul>
-<li>These formulas are in <strong>inline math mode</strong> for Markdown.</li>
-<li>Make sure you are using a platform or tool that supports <strong>MathJax</strong> or <strong>KaTeX</strong> (like Jupyter notebooks, GitHub, or certain Markdown editors) to properly render LaTeX.</li>
-</ul>
-<p>Let me know if you have any issues or need further assistance!</p>
-<h3 id="explanation_1">Explanation:</h3>
-<ul>
-<li>These formulas are in <strong>inline math mode</strong> for Markdown.</li>
-<li>Make sure you are using a platform or tool that supports <strong>MathJax</strong> or <strong>KaTeX</strong> (like Jupyter notebooks, GitHub, or certain Markdown editors) to properly render LaTeX.</li>
-</ul>
-<p>Let me know if you have any issues or need further assistance!</p>
-<h3 id="2-interactive-python-visualizations"><strong>2. Interactive Python Visualizations</strong></h3>
-<pre><code class="language-python">import numpy as np
+<pre><code>
+### Important Notes:
+- Make sure that the markdown environment you're using supports rendering LaTeX (like Jupyter Notebooks or GitHub).
+- The math code should be placed between triple backticks with `math` specified, like so: ```math
+... equations ...
+``` to ensure it gets rendered correctly.
+
+Let me know if you'd like any further help!
+
+### Explanation:
+- These formulas are in **inline math mode** for Markdown.
+- Make sure you are using a platform or tool that supports **MathJax** or **KaTeX** (like Jupyter notebooks, GitHub, or certain Markdown editors) to properly render LaTeX.
+
+Let me know if you have any issues or need further assistance!
+
+### Explanation:
+- These formulas are in **inline math mode** for Markdown.
+- Make sure you are using a platform or tool that supports **MathJax** or **KaTeX** (like Jupyter notebooks, GitHub, or certain Markdown editors) to properly render LaTeX.
+
+Let me know if you have any issues or need further assistance!
+### **2. Interactive Python Visualizations**
+
+
+```python
+import numpy as np
 import matplotlib.pyplot as plt
 from scipy.constants import G
 
