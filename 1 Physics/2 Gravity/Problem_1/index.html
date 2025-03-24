@@ -96,7 +96,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Problem 2</a>
+<li class="toctree-l2"><a class="reference internal" href="../Problem_2/">1.1 Definitions and Physical Meaning</a>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_3/">Problem 3</a>
 </li>
@@ -750,62 +750,6 @@ plt.legend()
 plt.grid()
 plt.show()
 </code></pre>
-<h3 id="d-3d-orbit-visualization"><strong>D. 3D Orbit Visualization</strong></h3>
-<pre><code class="language-python">from mpl_toolkits.mplot3d import Axes3D
-
-# Add inclination to orbit
-inclination = np.radians(30)
-positions_3d = np.zeros((steps, 3))
-pos = np.array([r_peri, 0, 0])
-vel = np.array([0, v_peri*np.cos(inclination), v_peri*np.sin(inclination)])
-
-for i in range(steps):
-    r_mag = np.linalg.norm(pos)
-    accel = -G*M*pos/r_mag**3
-    vel += accel*dt
-    pos += vel*dt
-    positions_3d[i] = pos
-
-fig = plt.figure(figsize=(10,8))
-ax = fig.add_subplot(111, projection='3d')
-ax.plot(positions_3d[:,0], positions_3d[:,1], positions_3d[:,2], 'b-')
-ax.scatter([0], [0], [0], c='yellow', s=300)
-ax.set_xlabel('X [m]')
-ax.set_ylabel('Y [m]')
-ax.set_zlabel('Z [m]')
-ax.set_title('3D Inclined Orbit Simulation')
-plt.show()
-</code></pre>
-<h3 id="e-energy-conservation-check"><strong>E. Energy Conservation Check</strong></h3>
-<pre><code class="language-python"># Calculate energy components over time
-kinetic = np.zeros(steps)
-potential = np.zeros(steps)
-
-pos = np.array([r_peri, 0])
-vel = np.array([0, v_peri])
-
-for i in range(steps):
-    r_mag = np.linalg.norm(pos)
-    kinetic[i] = 0.5*m*np.linalg.norm(vel)**2
-    potential[i] = -G*M*m/r_mag
-
-    accel = -G*M*pos/r_mag**3
-    vel += accel*dt
-    pos += vel*dt
-
-total_energy = kinetic + potential
-
-plt.figure(figsize=(10,6))
-plt.plot(kinetic, label='Kinetic Energy')
-plt.plot(potential, label='Potential Energy')
-plt.plot(total_energy, label='Total Energy')
-plt.xlabel('Time Step')
-plt.ylabel('Energy (J)')
-plt.title('Energy Conservation Check')
-plt.legend()
-plt.grid()
-plt.show()
-</code></pre>
 <h2 id="5-conclusion"><strong>5. Conclusion</strong></h2>
 <p>This implementation provides:
 - Multiple visualization methods (static, animated, 3D)
@@ -816,7 +760,7 @@ plt.show()
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
 <a class="btn btn-neutral float-left" href="../../1%20Mechanics/Problem_2/" title="Problem 2"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-<a class="btn btn-neutral float-right" href="../Problem_2/" title="Problem 2">Next <span class="icon icon-circle-arrow-right"></span></a>
+<a class="btn btn-neutral float-right" href="../Problem_2/" title="1.1 Definitions and Physical Meaning">Next <span class="icon icon-circle-arrow-right"></span></a>
 </div>
 <hr/>
 <div role="contentinfo">
