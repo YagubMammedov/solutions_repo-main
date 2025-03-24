@@ -416,19 +416,57 @@ For 1kg payload from Earth surface to LEO:
 <h2 id="core-physics-formulas">Core Physics Formulas</h2>
 <p>Here is how the formulas will appear if correctly rendered in a Markdown-supported LaTeX environment:</p>
 <h1 id="cosmic-velocities-and-escape-velocities"><strong>Cosmic Velocities and Escape Velocities</strong></h1>
-<h2 id="formulas"><strong>Formulas</strong></h2>
-<h3 id="1-orbital-velocity-1st-cosmic"><strong>1. Orbital Velocity (1st Cosmic)</strong></h3>
-<div class="arithmatex">\[
-v_{orb} = \sqrt{\frac{GM}{r}}
-\]</div>
-<h3 id="2-escape-velocity-2nd-cosmic"><strong>2. Escape Velocity (2nd Cosmic)</strong></h3>
-<div class="arithmatex">\[
-v_{esc} = \sqrt{\frac{2GM}{r}} = \sqrt{2} \times v_{orb}
-\]</div>
-<h3 id="3-solar-system-escape-velocity-3rd-cosmic"><strong>3. Solar System Escape Velocity (3rd Cosmic)</strong></h3>
-<div class="arithmatex">\[
-v_3 = \sqrt{v_{esc}^2 + (v_{planet} - v_{sun\_esc})^2}
-\]</div>
+<p>Here are the cosmic velocity formulas in proper Markdown format with clear mathematical notation:</p>
+<h2 id="cosmic-velocity-formulas"><strong>Cosmic Velocity Formulas</strong></h2>
+<h3 id="1-orbital-velocity-1st-cosmic-velocity"><strong>1. Orbital Velocity (1st Cosmic Velocity)</strong></h3>
+<pre><code class="language-math">v_{\text{orb}} = \sqrt{\frac{GM}{r}}
+</code></pre>
+<p><strong>Where:</strong>
+- <span class="arithmatex">\( G \)</span> = Gravitational constant (6.674×10⁻¹¹ N·m²/kg²)
+- <span class="arithmatex">\( M \)</span> = Mass of celestial body (kg)
+- <span class="arithmatex">\( r \)</span> = Distance from center (radius + altitude) (m)</p>
+<hr/>
+<h3 id="2-escape-velocity-2nd-cosmic-velocity"><strong>2. Escape Velocity (2nd Cosmic Velocity)</strong></h3>
+<pre><code class="language-math">v_{\text{esc}} = \sqrt{\frac{2GM}{r}} = \sqrt{2} \times v_{\text{orb}}
+</code></pre>
+<p><strong>Key Relationship:</strong><br/>
+Escape velocity is always √2 (≈1.414) times greater than orbital velocity at the same altitude.</p>
+<hr/>
+<h3 id="3-solar-system-escape-velocity-3rd-cosmic-velocity"><strong>3. Solar System Escape Velocity (3rd Cosmic Velocity)</strong></h3>
+<pre><code class="language-math">v_3 = \sqrt{v_{\text{esc}}^2 + (v_{\text{planet}} - v_{\text{sun\_esc}})^2}
+</code></pre>
+<p><strong>Where:</strong>
+- <span class="arithmatex">\( v_{\text{esc}} \)</span> = Escape velocity from the planet
+- <span class="arithmatex">\( v_{\text{planet}} \)</span> = Planet's orbital speed around the Sun
+- <span class="arithmatex">\( v_{\text{sun\_esc}} \)</span> = Escape velocity from Sun at planet's orbit (≈42.1 km/s at 1 AU)</p>
+<hr/>
+<h3 id="example-values-earth"><strong>Example Values (Earth)</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Velocity Type</th>
+<th>Formula</th>
+<th>Value (km/s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Orbital</strong></td>
+<td><span class="arithmatex">\( \sqrt{GM_{\oplus}/R_{\oplus}} \)</span></td>
+<td>7.91</td>
+</tr>
+<tr>
+<td><strong>Escape</strong></td>
+<td><span class="arithmatex">\( \sqrt{2} \times v_{\text{orb}} \)</span></td>
+<td>11.19</td>
+</tr>
+<tr>
+<td><strong>Solar Escape</strong></td>
+<td><span class="arithmatex">\( \sqrt{v_{\text{esc}}^2 + (v_{\oplus} - v_{\odot\text{esc}})^2} \)</span></td>
+<td>16.65</td>
+</tr>
+</tbody>
+</table>
 <hr/>
 <h2 id="results-visualization">Results Visualization</h2>
 <p>```
@@ -494,7 +532,7 @@ v_3 = \sqrt{v_{esc}^2 + (v_{planet} - v_{sun\_esc})^2}
 <p>Here is your Markdown document for <strong>Problem 2: Escape Velocities and Cosmic Velocities</strong> with detailed explanations, code for simulations, and graphical representations of escape velocities and cosmic velocities:</p>
 <hr/>
 <h2 id="14-heres-a-concise-version-of-the-formulas-and-python-code-to-calculate-and-visualize-the-orbital-velocity-escape-velocity-and-solar-system-escape-3rd-cosmic-velocity">1.4. Here’s a concise version of the formulas and Python code to calculate and visualize the <strong>Orbital Velocity</strong>, <strong>Escape Velocity</strong>, and <strong>Solar System Escape (3rd Cosmic Velocity)</strong>.</h2>
-<h3 id="formulas_1"><strong>Formulas</strong></h3>
+<h3 id="formulas"><strong>Formulas</strong></h3>
 <ol>
 <li>
 <p><strong>Orbital Velocity (1st Cosmic)</strong>:
