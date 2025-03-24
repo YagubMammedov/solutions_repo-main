@@ -1,7 +1,7 @@
 # Problem 2
 # **Escape Velocities and Cosmic Velocities**
 
-## **1. Definitions and Physical Meaning**
+## **1.1 Definitions and Physical Meaning**
 
 ### **First Cosmic Velocity (Orbital Velocity)**
 - **Definition**: Minimum velocity needed to maintain a stable circular orbit around a celestial body
@@ -31,7 +31,7 @@
   - \( v_{esc,\odot} \) = Escape velocity from Sun at Earth's orbit (~42.1 km/s)
   - \( v_{orb,\oplus} \) = Earth's orbital velocity (~29.8 km/s)
 
-## **2. Python Simulation**
+## ****1.2 Python Simulation**
 
 ```python
 import numpy as np
@@ -64,7 +64,7 @@ v3 = np.sqrt(v_earth_orbit**2 + (v_sun_escape - v_earth_orbit)**2)
 results['Earth'] += (v3,)
 ```
 
-## **3. Graphical Representations**
+## **1.3 Graphical Representations**
 
 ### **A. Velocity Comparison Chart**
 ```python
@@ -92,7 +92,7 @@ plt.show()
 ![alt text](image-7.png)
 ```
 
-## **4. Formulas in Practice**
+## **1.4 Graphical Representations**
 
 ### **Example Calculation (Earth)**
 \[
@@ -122,8 +122,220 @@ plt.grid()
 plt.show()
 ```
 ![alt text](image-9.png)
+
 This complete analysis provides:
 - Clear definitions of cosmic velocities
 - Computational verification
 - Multiple visualization methods
 - Practical examples and applications
+
+
+
+# **Mathematical Analysis of Cosmic Velocities**
+
+## **1.2.1 Fundamental Derivations**
+
+### **First Cosmic Velocity (Orbital Velocity)**
+**Derivation from Force Balance:**
+\[
+\frac{GMm}{r^2} = \frac{mv_1^2}{r} \implies v_1 = \sqrt{\frac{GM}{r}}
+\]
+
+**Key Parameters:**
+- \( G \): Gravitational constant (6.674×10⁻¹¹ N·m²/kg²)
+- \( M \): Central body mass
+- \( r \): Distance from center (radius + altitude)
+
+---
+
+### **Second Cosmic Velocity (Escape Velocity)**
+**Energy Conservation Approach:**
+\[
+\frac{1}{2}mv_2^2 - \frac{GMm}{r} = 0 \implies v_2 = \sqrt{\frac{2GM}{r}}
+\]
+
+**Critical Insight:**
+- Exactly √2 times orbital velocity
+- Independent of projectile mass
+
+---
+
+### **Third Cosmic Velocity (Solar System Escape)**
+**Vector Summation:**
+\[
+v_3 = \sqrt{v_{\text{esc,⊙}}^2 + (v_{\text{orb,⊕}} - v_{\text{esc,⊕}})^2}
+\]
+Where:
+- \( v_{\text{esc,⊙}} \): Solar escape velocity at Earth's orbit (~42.1 km/s)
+- \( v_{\text{orb,⊕}} \): Earth's orbital speed (~29.8 km/s)
+![alt text](image-11.png)
+
+## **1.2.2 Parameter Sensitivity Analysis**
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.constants import G
+
+# Parameter ranges
+masses = np.logspace(22, 30, 50)  # 10²² to 10³⁰ kg
+radii = np.logspace(6, 8, 50)     # 10⁶ to 10⁸ m
+
+# Velocity surface calculation
+M, R = np.meshgrid(masses, radii)
+V_escape = np.sqrt(2*G*M/R)/1000  # km/s
+
+# 3D Plot
+fig = plt.figure(figsize=(12,8))
+ax = fig.add_subplot(111, projection='3d')
+surf = ax.plot_surface(np.log10(M), np.log10(R), V_escape, 
+                      cmap='viridis', edgecolor='none')
+ax.set_xlabel('log₁₀(Mass [kg])')
+ax.set_ylabel('log₁₀(Radius [m])')
+ax.set_zlabel('Escape Velocity (km/s)')
+ax.set_title('Escape Velocity Dependence on Mass and Radius')
+fig.colorbar(surf, shrink=0.5, aspect=5)
+plt.show()
+```
+
+![Escape Velocity Surface](https://i.imgur.com/EscapeVelocity3D.png)
+
+**Key Observations:**
+1. **Mass Dominance**: Velocity scales with √M
+2. **Radius Inverse Relationship**: ∝ 1/√r
+3. **Extreme Cases**:
+   - Neutron stars: ~0.5c escape velocity
+   - Gas giants: High mass + large radius → moderate escape velocity
+
+---
+
+## **1.2.3 Comparative Planetary Analysis**
+
+```python
+# Solar system bodies data
+bodies = {
+    'Mercury': (2.439e6, 3.301e23),
+    'Venus': (6.052e6, 4.867e24),
+    'Earth': (6.371e6, 5.972e24),
+    'Mars': (3.390e6, 6.417e23),
+    'Jupiter': (6.991e7, 1.899e27)
+}
+
+# Calculate and compare
+data = []
+for name, (R, M) in bodies.items():
+    v1 = np.sqrt(G*M/R)/1000
+    v2 = np.sqrt(2)*v1
+    data.append([name, R/1e6, M/5.972e24, v1, v2])
+
+# Create table
+import pandas as pd
+df = pd.DataFrame(data, 
+                 columns=['Body', 'Radius (Mm)', 'Mass (M⊕)', 
+                         '1st Cosmic (km/s)', '2nd Cosmic (km/s)'])
+print(df.to_markdown(index=False))
+```
+
+| Body    | Radius (Mm) | Mass (M⊕) | 1st Cosmic (km/s) | 2nd Cosmic (km/s) |
+|---------|-------------|-----------|--------------------|--------------------|
+| Mercury | 2.439       | 0.055     | 3.01               | 4.25               |
+| Venus   | 6.052       | 0.815     | 7.33               | 10.36              |
+| Earth   | 6.371       | 1.000     | 7.91               | 11.19              |
+| Mars    | 3.390       | 0.107     | 3.55               | 5.03               |
+| Jupiter | 69.91       | 317.8     | 42.06              | 59.49              |
+
+---
+![alt text](image-12.png)
+## **1.2.4 Altitude Effects Visualization**
+
+```python
+# Earth altitude analysis
+R_earth = 6.371e6
+altitudes = np.linspace(0, 2000, 100)*1000  # 0-2000 km
+
+plt.figure(figsize=(10,6))
+plt.plot(altitudes/1000, np.sqrt(G*5.972e24/(R_earth + altitudes))/1000, label='Orbital')
+plt.plot(altitudes/1000, np.sqrt(2*G*5.972e24/(R_earth + altitudes))/1000, label='Escape')
+plt.xlabel('Altitude (km)')
+plt.ylabel('Velocity (km/s)')
+plt.title('Velocity vs Altitude for Earth')
+plt.legend()
+plt.grid()
+plt.show()
+```
+
+![Altitude Effects](https://i.imgur.com/AltitudeEffects.png)
+![alt text](image-13.png)
+**Critical Points:**
+- ISS altitude (~400 km): 7.67 km/s orbital
+- Geostationary orbit (~35,786 km): 3.07 km/s orbital
+
+---
+
+## **1.2.5 Relativistic Corrections**
+
+For extreme gravity fields:
+\[
+v_{\text{esc}} = c\sqrt{1 - \left(1 - \frac{r_s}{r}\right)^2}
+\]
+Where \( r_s = \frac{2GM}{c^2} \) is Schwarzschild radius.
+
+**Python Implementation:**
+```python
+c = 3e8  # Speed of light
+r_s = 2*G*1.989e30/c**2  # Solar mass black hole
+
+def rel_escape_velocity(r):
+    return c*np.sqrt(1 - (1 - r_s/r)**2)
+
+r_values = np.linspace(1.01*r_s, 5*r_s, 100)
+plt.plot(r_values/r_s, rel_escape_velocity(r_values)/c)
+plt.xlabel('r/r_s')
+plt.ylabel('v_esc/c')
+plt.title('Relativistic Escape Velocity')
+plt.grid()
+```
+
+---
+
+## **1.2.6 Practical Implications**
+
+**Space Mission Design Considerations:**
+1. **Launch Windows**:
+   - Equatorial launches gain ~0.46 km/s from Earth's rotation
+2. **Gravity Assists**:
+   - Voyager missions saved ~18 km/s Δv using planetary flybys
+3. **Propulsion Requirements**:
+   - Moon mission: Δv ~15.9 km/s
+   - Mars mission: Δv ~21 km/s (with optimal alignment)
+
+**Energy Equivalent:**
+\[
+\Delta E = \frac{1}{2}m(v_2^2 - v_1^2)
+\]
+For 1kg payload from Earth surface to LEO:
+\[
+\Delta E \approx 33 \text{ MJ/kg}
+\]
+
+---
+
+## **1.2.7 Conclusion**
+
+1. **Mathematical Foundations**:
+   - Velocities derive from energy conservation and force balance
+   - Exact √2 relationship between orbital and escape velocities
+
+2. **Parameter Sensitivity**:
+   - Most sensitive to central mass (∝√M)
+   - Weak radius dependence (∝1/√r)
+
+3. **Mission Design**:
+   - Atmospheric drag can increase required velocities by 1.3-1.5×
+   - Third cosmic velocity highly dependent on launch timing
+
+4. **Extreme Cases**:
+   - Neutron stars require relativistic treatment
+   - Supermassive black holes have "gentler" escape profiles near event horizon
+
+This analysis provides the complete theoretical framework and computational tools for understanding cosmic velocities across astronomical contexts.
