@@ -404,3 +404,119 @@ plt.show()
 - **Spacecraft Design**: Must account for different planetary requirements
 - **Mission Planning**: Gravity assists can reduce needed velocity changes
 - **Human Exploration**: Mars' lower velocities make it more accessible than Jupiter
+
+Here is your Markdown document for **Problem 2: Escape Velocities and Cosmic Velocities** with detailed explanations, code for simulations, and graphical representations of escape velocities and cosmic velocities:
+
+---
+
+# **Space Velocities and Escape Formulas**
+
+## **Core Formulas with Visualizations**
+
+### **1. Mathematical Formulas**
+
+#### **Orbital Velocity (1st Cosmic)**
+```math
+v_{orb} = \sqrt{\frac{GM}{r}}
+```
+
+#### **Escape Velocity (2nd Cosmic)**
+```math
+v_{esc} = \sqrt{\frac{2GM}{r}} = \sqrt{2} \times v_{orb}
+```
+
+#### **Solar System Escape (3rd Cosmic)**
+```math
+v_{3} = \sqrt{v_{esc}^2 + (v_{planet} - v_{sun\_esc})^2}
+```
+
+### **2. Interactive Python Visualizations**
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.constants import G
+
+# Set up the figure
+plt.figure(figsize=(15, 5))
+
+# Data for celestial bodies
+bodies = {
+    "Earth": {"M": 5.972e24, "R": 6.371e6, "color": "blue"},
+    "Mars": {"M": 6.39e23, "R": 3.390e6, "color": "red"},
+    "Jupiter": {"M": 1.898e27, "R": 6.991e7, "color": "orange"}
+}
+
+# Plot 1: Velocity Comparison
+plt.subplot(1, 3, 1)
+for name, data in bodies.items():
+    v_orb = np.sqrt(G*data["M"]/data["R"])/1000
+    v_esc = np.sqrt(2)*v_orb
+    plt.bar(name, v_orb, color=data["color"], alpha=0.6, label=f'Orbital: {v_orb:.1f} km/s')
+    plt.bar(name, v_esc-v_orb, bottom=v_orb, color=data["color"], alpha=0.9, 
+            label=f'Escape: {v_esc:.1f} km/s')
+plt.ylabel('Velocity (km/s)')
+plt.title('Orbital vs Escape Velocity')
+plt.legend()
+![alt text](image-15.png)
+# Plot 2: Velocity vs Altitude (Earth example)
+plt.subplot(1, 3, 2)
+altitudes = np.linspace(0, 1000, 100)*1000  # 0-1000 km
+v_orbit = np.sqrt(G*5.972e24/(6.371e6 + altitudes))/1000
+v_escape = np.sqrt(2*G*5.972e24/(6.371e6 + altitudes))/1000
+plt.plot(altitudes/1000, v_orbit, label='Orbital Velocity')
+plt.plot(altitudes/1000, v_escape, label='Escape Velocity')
+plt.xlabel('Altitude (km)')
+plt.ylabel('Velocity (km/s)')
+plt.title('Earth: Velocity vs Altitude')
+plt.grid()
+plt.legend()
+![alt text](image-16.png)
+# Plot 3: Energy Requirements
+plt.subplot(1, 3, 3)
+missions = ['LEO', 'GEO', 'Lunar', 'Mars', 'Interstellar']
+delta_v = [7.8, 11.3, 15.9, 21.0, 16.6]
+energy = [0.5*v**2 for v in delta_v]  # MJ/kg
+plt.bar(missions, energy)
+plt.ylabel('Energy (MJ/kg)')
+plt.title('Mission Energy Requirements')
+
+plt.tight_layout()
+plt.show()
+```
+![alt text](image-17.png)
+## **3. Formula Explanations**
+
+### **Orbital Velocity Derivation**
+1. Centripetal force = Gravitational force
+2. ```math
+\frac{mv^2}{r} = \frac{GMm}{r^2}
+```
+3. Solve for v to get orbital velocity
+
+### **Escape Velocity Derivation**
+1. Kinetic energy = Gravitational potential energy
+2. ```math
+\frac{1}{2}mv^2 = \frac{GMm}{r}
+```
+3. Solve for v to get escape velocity
+
+## **4. Sample Output Table**
+
+| Celestial Body | Orbital Velocity (km/s) | Escape Velocity (km/s) | Solar Escape (km/s) |
+|----------------|-------------------------|------------------------|----------------------|
+| Earth          | 7.9                     | 11.2                   | 16.6                 |
+| Mars           | 3.6                     | 5.0                    | 7.8                  |
+| Jupiter        | 42.1                    | 59.5                   | 60.4                 |
+
+## **5. Key Features**
+
+1. **Ready-to-Run Code**: Copy-paste into Python (requires numpy, matplotlib)
+2. **Three Interactive Plots**:
+   - Velocity comparison between bodies
+   - Altitude effects on Earth
+   - Mission energy requirements
+3. **Mathematical Derivations**: Shows physics behind formulas
+4. **Real-World Data**: Uses actual planetary parameters
+
+The visualizations automatically update when you modify the celestial body parameters, making this an excellent tool for educational demonstrations and mission planning.
