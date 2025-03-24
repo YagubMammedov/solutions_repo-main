@@ -409,127 +409,25 @@ Here is your Markdown document for **Problem 2: Escape Velocities and Cosmic Vel
 
 ---
 
-Here is the correct markdown code for rendering the formulas using LaTeX:
+## 1.4. Here’s a concise version of the formulas and Python code to calculate and visualize the **Orbital Velocity**, **Escape Velocity**, and **Solar System Escape (3rd Cosmic Velocity)**.
 
-```markdown
-#### **Orbital Velocity (1st Cosmic)**
-```math
-v_{orb} = \sqrt{\frac{GM}{r}}
-```
-#### **Escape Velocity (2nd Cosmic)**
-```math
-v_{esc} = \sqrt{\frac{2GM}{r}} = \sqrt{2} \times v_{orb}
-```
+### **Formulas**
 
-#### **Solar System Escape (3rd Cosmic)**
-```math
-v_{3} = \sqrt{v_{esc}^2 + (v_{planet} - v_{sun\_esc})^2}
-```
+1. **Orbital Velocity (1st Cosmic)**:
+   \[
+   v_{orb} = \sqrt{\frac{GM}{r}}
+   \]
 
-```
+2. **Escape Velocity (2nd Cosmic)**:
+   \[
+   v_{esc} = \sqrt{\frac{2GM}{r}} = \sqrt{2} \times v_{orb}
+   \]
 
-### Important Notes:
-- Make sure that the markdown environment you're using supports rendering LaTeX (like Jupyter Notebooks or GitHub).
-- The math code should be placed between triple backticks with `math` specified, like so: ```math
-... equations ...
-``` to ensure it gets rendered correctly.
+3. **Solar System Escape Velocity (3rd Cosmic)**:
+   \[
+   v_3 = \sqrt{v_{esc}^2 + (v_{planet} - v_{sun\_esc})^2}
+   \]
 
-Let me know if you'd like any further help!
+![alt text](image-18.png)
 
-### Explanation:
-- These formulas are in **inline math mode** for Markdown.
-- Make sure you are using a platform or tool that supports **MathJax** or **KaTeX** (like Jupyter notebooks, GitHub, or certain Markdown editors) to properly render LaTeX.
-
-Let me know if you have any issues or need further assistance!
-
-### Explanation:
-- These formulas are in **inline math mode** for Markdown.
-- Make sure you are using a platform or tool that supports **MathJax** or **KaTeX** (like Jupyter notebooks, GitHub, or certain Markdown editors) to properly render LaTeX.
-
-Let me know if you have any issues or need further assistance!
-### **2. Interactive Python Visualizations**
-
-
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.constants import G
-
-# Set up the figure
-plt.figure(figsize=(15, 5))
-
-# Data for celestial bodies
-bodies = {
-    "Earth": {"M": 5.972e24, "R": 6.371e6, "color": "blue"},
-    "Mars": {"M": 6.39e23, "R": 3.390e6, "color": "red"},
-    "Jupiter": {"M": 1.898e27, "R": 6.991e7, "color": "orange"}
-}
-
-# Plot 1: Velocity Comparison
-plt.subplot(1, 3, 1)
-for name, data in bodies.items():
-    v_orb = np.sqrt(G*data["M"]/data["R"])/1000
-    v_esc = np.sqrt(2)*v_orb
-    plt.bar(name, v_orb, color=data["color"], alpha=0.6, label=f'Orbital: {v_orb:.1f} km/s')
-    plt.bar(name, v_esc-v_orb, bottom=v_orb, color=data["color"], alpha=0.9, 
-            label=f'Escape: {v_esc:.1f} km/s')
-plt.ylabel('Velocity (km/s)')
-plt.title('Orbital vs Escape Velocity')
-plt.legend()
-
-![alt text](image-15.png)
-
-# Plot 2: Velocity vs Altitude (Earth example)
-plt.subplot(1, 3, 2)
-altitudes = np.linspace(0, 1000, 100)*1000  # 0-1000 km
-v_orbit = np.sqrt(G*5.972e24/(6.371e6 + altitudes))/1000
-v_escape = np.sqrt(2*G*5.972e24/(6.371e6 + altitudes))/1000
-plt.plot(altitudes/1000, v_orbit, label='Orbital Velocity')
-plt.plot(altitudes/1000, v_escape, label='Escape Velocity')
-plt.xlabel('Altitude (km)')
-plt.ylabel('Velocity (km/s)')
-plt.title('Earth: Velocity vs Altitude')
-plt.grid()
-plt.legend()
-
-![alt text](image-16.png)
-
-# Plot 3: Energy Requirements
-plt.subplot(1, 3, 3)
-missions = ['LEO', 'GEO', 'Lunar', 'Mars', 'Interstellar']
-delta_v = [7.8, 11.3, 15.9, 21.0, 16.6]
-energy = [0.5*v**2 for v in delta_v]  # MJ/kg
-plt.bar(missions, energy)
-plt.ylabel('Energy (MJ/kg)')
-plt.title('Mission Energy Requirements')
-
-plt.tight_layout()
-plt.show()
-```
-![alt text](image-17.png)
-
-## **3. Formula Explanations**
-
-### **Orbital Velocity Derivation**
-1. Centripetal force = Gravitational force
-2. ```math
-\frac{mv^2}{r} = \frac{GMm}{r^2}
-```
-3. Solve for v to get orbital velocity
-
-### **Escape Velocity Derivation**
-1. Kinetic energy = Gravitational potential energy
-2. ```math
-\frac{1}{2}mv^2 = \frac{GMm}{r}
-```
-3. Solve for v to get escape velocity
-
-
-## **4. Sample Output Table**
-
-| Celestial Body | Orbital Velocity (km/s) | Escape Velocity (km/s) | Solar Escape (km/s) |
-|----------------|-------------------------|------------------------|----------------------|
-| Earth          | 7.9                     | 11.2                   | 16.6                 |
-| Mars           | 3.6                     | 5.0                    | 7.8                  |
-| Jupiter        | 42.1                    | 59.5                   | 60.4                 |
-
+![alt text](image-19.png)
