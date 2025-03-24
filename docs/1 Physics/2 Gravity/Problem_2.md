@@ -271,36 +271,8 @@ Here is how the formulas will appear if correctly rendered in a Markdown-support
 
 # **Cosmic Velocities and Escape Velocities**
 
-Here are the cosmic velocity formulas in proper Markdown format with clear mathematical notation:
+Here are the cosmic velocity formulas in proper Markdown format with clear mathematical notation
 
-## **Cosmic Velocity Formulas**
-
-### **1. Orbital Velocity (1st Cosmic Velocity)**
-```math
-v_{\text{orb}} = \sqrt{\frac{GM}{r}}
-```
-
-**Where:**
-- \( G \) = Gravitational constant (6.674×10⁻¹¹ N·m²/kg²)
-- \( M \) = Mass of celestial body (kg)
-- \( r \) = Distance from center (radius + altitude) (m)
-
----
-
-### **2. Escape Velocity (2nd Cosmic Velocity)**
-```math
-v_{\text{esc}} = \sqrt{\frac{2GM}{r}} = \sqrt{2} \times v_{\text{orb}}
-```
-
-**Key Relationship:**  
-Escape velocity is always √2 (≈1.414) times greater than orbital velocity at the same altitude.
-
----
-
-### **3. Solar System Escape Velocity (3rd Cosmic Velocity)**
-```math
-v_3 = \sqrt{v_{\text{esc}}^2 + (v_{\text{planet}} - v_{\text{sun\_esc}})^2}
-```
 
 **Where:**
 - \( v_{\text{esc}} \) = Escape velocity from the planet
