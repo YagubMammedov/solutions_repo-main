@@ -269,20 +269,25 @@ For 1kg payload from Earth surface to LEO:
 
 Here is how the formulas will appear if correctly rendered in a Markdown-supported LaTeX environment:
 
+# **Cosmic Velocities and Escape Velocities**
+
+## **Formulas**
+
 ### **1. Orbital Velocity (1st Cosmic)**
-\[
+$$
 v_{orb} = \sqrt{\frac{GM}{r}}
-\]
+$$
 
 ### **2. Escape Velocity (2nd Cosmic)**
-\[
+$$
 v_{esc} = \sqrt{\frac{2GM}{r}} = \sqrt{2} \times v_{orb}
-\]
+$$
 
 ### **3. Solar System Escape Velocity (3rd Cosmic)**
-\[
+$$
 v_3 = \sqrt{v_{esc}^2 + (v_{planet} - v_{sun\_esc})^2}
-\]
+$$
+
 
 ---
 ## Results Visualization
