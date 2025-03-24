@@ -272,33 +272,7 @@ plt.show()
 
 ---
 
-## **1.2.5 Relativistic Corrections**
-
-For extreme gravity fields:
-\[
-v_{\text{esc}} = c\sqrt{1 - \left(1 - \frac{r_s}{r}\right)^2}
-\]
-Where \( r_s = \frac{2GM}{c^2} \) is Schwarzschild radius.
-
-**Python Implementation:**
-```python
-c = 3e8  # Speed of light
-r_s = 2*G*1.989e30/c**2  # Solar mass black hole
-
-def rel_escape_velocity(r):
-    return c*np.sqrt(1 - (1 - r_s/r)**2)
-
-r_values = np.linspace(1.01*r_s, 5*r_s, 100)
-plt.plot(r_values/r_s, rel_escape_velocity(r_values)/c)
-plt.xlabel('r/r_s')
-plt.ylabel('v_esc/c')
-plt.title('Relativistic Escape Velocity')
-plt.grid()
-```
-
----
-
-## **1.2.6 Practical Implications**
+## **1.2.5 Practical Implications**
 
 **Space Mission Design Considerations:**
 1. **Launch Windows**:
@@ -319,23 +293,106 @@ For 1kg payload from Earth surface to LEO:
 \]
 
 ---
+## **1.3 Cosmic Velocities Calculator
 
-## **1.2.7 Conclusion**
+## Core Physics Formulas
 
-1. **Mathematical Foundations**:
-   - Velocities derive from energy conservation and force balance
-   - Exact √2 relationship between orbital and escape velocities
+### First Cosmic Velocity (Orbital)
+```math
+v_1 = \sqrt{\frac{GM}{R}}
+```
 
-2. **Parameter Sensitivity**:
-   - Most sensitive to central mass (∝√M)
-   - Weak radius dependence (∝1/√r)
+### Second Cosmic Velocity (Escape)
+```math
+v_2 = \sqrt{\frac{2GM}{R}} = \sqrt{2} \times v_1
+```
 
-3. **Mission Design**:
-   - Atmospheric drag can increase required velocities by 1.3-1.5×
-   - Third cosmic velocity highly dependent on launch timing
+### Third Cosmic Velocity (Solar Escape)
+```math
+v_3 = \sqrt{v_{esc}^2 + (v_{orb} - v_{esc})^2}
+```
 
-4. **Extreme Cases**:
-   - Neutron stars require relativistic treatment
-   - Supermassive black holes have "gentler" escape profiles near event horizon
+## Python Implementation
 
-This analysis provides the complete theoretical framework and computational tools for understanding cosmic velocities across astronomical contexts.
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.constants import G
+
+# Celestial body database
+bodies = {
+    "Earth": {
+        "radius": 6.371e6,      # m
+        "mass": 5.972e24,       # kg
+        "orbital_speed": 29.8e3  # m/s (around Sun)
+    },
+    "Mars": {
+        "radius": 3.390e6,
+        "mass": 6.39e23,
+        "orbital_speed": 24.1e3
+    },
+    "Jupiter": {
+        "radius": 6.991e7,
+        "mass": 1.898e27,
+        "orbital_speed": 13.1e3
+    }
+}
+
+
+## Results Visualization
+
+### 1. Velocity Comparison Chart
+
+# Convert to km/s for readability
+names = list(results.keys())
+v1 = [x[0]/1000 for x in results.values()]
+v2 = [x[1]/1000 for x in results.values()]
+v3 = [x[2]/1000 for x in results.values()]
+
+x = np.arange(len(names))
+width = 0.25
+
+plt.figure(figsize=(12,6))
+plt.bar(x - width, v1, width, label='1st Cosmic (Orbital)')
+plt.bar(x, v2, width, label='2nd Cosmic (Escape)')
+plt.bar(x + width, v3, width, label='3rd Cosmic (Solar Escape)')
+
+plt.ylabel('Velocity (km/s)')
+plt.title('Cosmic Velocities Comparison')
+plt.xticks(x, names)
+plt.legend()
+plt.grid(axis='y')
+plt.show()
+```
+![alt text](image-14.png)
+
+
+## Numerical Results
+
+### Calculated Values (km/s)
+
+| Body    | 1st Cosmic | 2nd Cosmic | 3rd Cosmic |
+|---------|------------|------------|------------|
+| Earth   | 7.91       | 11.19      | 16.65      |
+| Mars    | 3.55       | 5.03       | 7.82       |
+| Jupiter | 42.06      | 59.49      | 60.35      |
+
+## Key Observations
+
+1. **Planetary Differences**:
+   - Jupiter requires much higher velocities due to its massive size
+   - Mars has significantly lower requirements than Earth
+
+2. **Altitude Effects**:
+   - Escape velocity decreases with altitude
+   - 400 km altitude (ISS): ~7.67 km/s orbital, ~10.85 km/s escape
+
+3. **Solar System Escape**:
+   - Earth requires additional ~5.5 km/s beyond planetary escape
+   - Jupiter's strong gravity helps with solar escape (only +0.86 km/s needed)
+
+## Practical Implications
+
+- **Spacecraft Design**: Must account for different planetary requirements
+- **Mission Planning**: Gravity assists can reduce needed velocity changes
+- **Human Exploration**: Mars' lower velocities make it more accessible than Jupiter
