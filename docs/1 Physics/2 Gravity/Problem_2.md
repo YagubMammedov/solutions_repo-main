@@ -439,6 +439,7 @@ v_{3} = \sqrt{v_{esc}^2 + (v_{planet} - v_{sun\_esc})^2}
 Let me know if you have any issues or need further assistance!
 ### **2. Interactive Python Visualizations**
 
+
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
