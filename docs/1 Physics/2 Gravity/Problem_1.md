@@ -600,6 +600,3 @@ This implementation provides:
 - Energy conservation analysis
 - Support for various orbital parameters
 
-**Pro Tip:** Adjust `dt` and `steps` for different orbital configurations:
-- Smaller `dt` for higher eccentricity orbits
-- More `steps` for longer period orbits
