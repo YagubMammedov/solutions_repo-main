@@ -234,46 +234,55 @@ plt.show()
 - Incorporate atmospheric drag models
 - Simulate multi-body gravity (Moon perturbations)</p>
 <h2 id="321">**3.2.1</h2>
-<p>Here are the essential orbital mechanics formulas in clean mathematical notation:</p>
-<h3 id="core-equations-of-orbital-motion">Core Equations of Orbital Motion</h3>
-<ol>
-<li>
-<p><strong>Newton's Gravitational Law</strong>
-   [
-   F = G\frac{m_1 m_2}{r^2}
-   ]</p>
-</li>
-<li>
-<p><strong>Circular Orbit Velocity</strong>
-   [
-   v = \sqrt{\frac{GM}{r}}
-   ]</p>
-</li>
-<li>
-<p><strong>Escape Velocity</strong> 
-   [
-   v_e = \sqrt{\frac{2GM}{r}}
-   ]</p>
-</li>
-<li>
-<p><strong>Orbital Energy</strong>
-   [
-   E = \frac{v^2}{2} - \frac{GM}{r}
-   ]</p>
-</li>
-<li>
-<p><strong>Orbital Period (Kepler's 3rd Law)</strong>
-   [
-   T = 2\pi\sqrt{\frac{r^3}{GM}}
-   ]</p>
-</li>
-<li>
-<p><strong>Vis-Viva Equation</strong>
-   [
-   v^2 = GM\left(\frac{2}{r} - \frac{1}{a}\right)
-   ]</p>
-</li>
-</ol>
+<p>Here are the orbital mechanics formulas in proper mathematical notation:</p>
+<h3 id="1-newtons-law-of-universal-gravitation"><strong>1. Newton's Law of Universal Gravitation</strong></h3>
+<div class="arithmatex">\[
+\mathbf{F} = -G \frac{m_1 m_2}{r^2} \mathbf{\hat{r}}
+\]</div>
+<h3 id="2-circular-orbital-velocity"><strong>2. Circular Orbital Velocity</strong></h3>
+<div class="arithmatex">\[
+v_{\text{circ}} = \sqrt{\frac{GM}{r}}
+\]</div>
+<h3 id="3-escape-velocity"><strong>3. Escape Velocity</strong></h3>
+<div class="arithmatex">\[
+v_{\text{esc}} = \sqrt{\frac{2GM}{r}} = \sqrt{2} \cdot v_{\text{circ}}
+\]</div>
+<h3 id="4-specific-orbital-energy"><strong>4. Specific Orbital Energy</strong></h3>
+<div class="arithmatex">\[
+\varepsilon = \frac{v^2}{2} - \frac{GM}{r}
+\]</div>
+<h3 id="5-orbital-period-keplers-third-law"><strong>5. Orbital Period (Kepler's Third Law)</strong></h3>
+<div class="arithmatex">\[
+T = 2\pi \sqrt{\frac{a^3}{GM}}
+\]</div>
+<h3 id="6-vis-viva-equation"><strong>6. Vis-Viva Equation</strong></h3>
+<div class="arithmatex">\[
+v^2 = GM \left( \frac{2}{r} - \frac{1}{a} \right)
+\]</div>
+<h3 id="7-eccentricity-vector"><strong>7. Eccentricity Vector</strong></h3>
+<div class="arithmatex">\[
+\mathbf{e} = \frac{\mathbf{v} \times \mathbf{h}}{GM} - \frac{\mathbf{r}}{r}
+\]</div>
+<h3 id="8-angular-momentum"><strong>8. Angular Momentum</strong></h3>
+<div class="arithmatex">\[
+\mathbf{h} = \mathbf{r} \times \mathbf{v}
+\]</div>
+<p><strong>Where:</strong>
+- <span class="arithmatex">\( G \)</span> = Gravitational constant (6.67430 × 10⁻¹¹ m³ kg⁻¹ s⁻²)
+- <span class="arithmatex">\( M \)</span> = Mass of central body (kg)
+- <span class="arithmatex">\( r \)</span> = Distance between centers (m)
+- <span class="arithmatex">\( a \)</span> = Semi-major axis (m)
+- <span class="arithmatex">\( v \)</span> = Orbital velocity (m/s)
+- <span class="arithmatex">\( \mathbf{r}, \mathbf{v} \)</span> = Position and velocity vectors</p>
+<p>These formulas are properly formatted using LaTeX mathematical notation and will:
+1. Copy correctly to any technical document
+2. Render properly in Markdown/LaTeX editors
+3. Maintain clear mathematical formatting
+4. Be easily editable for different scenarios</p>
+<p>Would you like me to:
+1. Add dimensional analysis for each equation?
+2. Provide concrete examples with Earth orbital parameters?
+3. Show the derivation of any particular formula?</p>
 <h3 id="key-parameters">Key Parameters:</h3>
 <ul>
 <li><span class="arithmatex">\( G \)</span> = 6.674×10⁻¹¹ m³/kg/s² (Gravitational constant)</li>
@@ -287,10 +296,6 @@ plt.show()
 - Render correctly in Jupyter/VSCode/GitHub
 - Maintain clean formatting
 - Work in LaTeX documents</p>
-<p>Would you like me to:
-1. Add explanations for each equation?
-2. Provide sample calculations?
-3. Show how these relate to the Python code?</p>
 <h2 id="322-visualization-analysis">**3.2.2 Visualization &amp; Analysis</h2>
 <p>Static Trajectory Plot
 <img alt="alt text" src="../image-21.png"/></p>
