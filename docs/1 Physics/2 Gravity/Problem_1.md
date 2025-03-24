@@ -532,65 +532,6 @@ plt.grid()
 plt.show()
 ```
 
-### **D. 3D Orbit Visualization**
-```python
-from mpl_toolkits.mplot3d import Axes3D
-
-# Add inclination to orbit
-inclination = np.radians(30)
-positions_3d = np.zeros((steps, 3))
-pos = np.array([r_peri, 0, 0])
-vel = np.array([0, v_peri*np.cos(inclination), v_peri*np.sin(inclination)])
-
-for i in range(steps):
-    r_mag = np.linalg.norm(pos)
-    accel = -G*M*pos/r_mag**3
-    vel += accel*dt
-    pos += vel*dt
-    positions_3d[i] = pos
-
-fig = plt.figure(figsize=(10,8))
-ax = fig.add_subplot(111, projection='3d')
-ax.plot(positions_3d[:,0], positions_3d[:,1], positions_3d[:,2], 'b-')
-ax.scatter([0], [0], [0], c='yellow', s=300)
-ax.set_xlabel('X [m]')
-ax.set_ylabel('Y [m]')
-ax.set_zlabel('Z [m]')
-ax.set_title('3D Inclined Orbit Simulation')
-plt.show()
-```
-
-### **E. Energy Conservation Check**
-```python
-# Calculate energy components over time
-kinetic = np.zeros(steps)
-potential = np.zeros(steps)
-
-pos = np.array([r_peri, 0])
-vel = np.array([0, v_peri])
-
-for i in range(steps):
-    r_mag = np.linalg.norm(pos)
-    kinetic[i] = 0.5*m*np.linalg.norm(vel)**2
-    potential[i] = -G*M*m/r_mag
-    
-    accel = -G*M*pos/r_mag**3
-    vel += accel*dt
-    pos += vel*dt
-
-total_energy = kinetic + potential
-
-plt.figure(figsize=(10,6))
-plt.plot(kinetic, label='Kinetic Energy')
-plt.plot(potential, label='Potential Energy')
-plt.plot(total_energy, label='Total Energy')
-plt.xlabel('Time Step')
-plt.ylabel('Energy (J)')
-plt.title('Energy Conservation Check')
-plt.legend()
-plt.grid()
-plt.show()
-```
 
 ## **5. Conclusion**
 

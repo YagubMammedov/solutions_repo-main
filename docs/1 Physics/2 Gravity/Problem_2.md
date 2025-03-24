@@ -1,9 +1,6 @@
-# Problem 2
-# **Escape Velocities and Cosmic Velocities**
+# 1.1 Definitions and Physical Meaning
 
-## **1.1 Definitions and Physical Meaning**
-
-### **First Cosmic Velocity (Orbital Velocity)**
+## First Cosmic Velocity (Orbital Velocity)
 - **Definition**: Minimum velocity needed to maintain a stable circular orbit around a celestial body
 - **Formula**:  
   \[
@@ -12,7 +9,7 @@
 - **Physical Meaning**:  
   Balances gravitational pull with centripetal force to prevent falling or escaping
 
-### **Second Cosmic Velocity (Escape Velocity)**
+## Second Cosmic Velocity (Escape Velocity)
 - **Definition**: Minimum velocity needed to completely escape a celestial body's gravity
 - **Formula**:  
   \[
@@ -21,7 +18,7 @@
 - **Physical Meaning**:  
   Provides enough kinetic energy to overcome gravitational potential energy
 
-### **Third Cosmic Velocity (Solar System Escape Velocity)**
+## Third Cosmic Velocity (Solar System Escape Velocity)
 - **Definition**: Velocity needed at Earth's orbit to escape the Sun's gravitational influence
 - **Formula**:  
   \[
@@ -30,6 +27,7 @@
   Where:
   - \( v_{esc,\odot} \) = Escape velocity from Sun at Earth's orbit (~42.1 km/s)
   - \( v_{orb,\oplus} \) = Earth's orbital velocity (~29.8 km/s)
+
 
 ## ****1.2 Python Simulation**
 
