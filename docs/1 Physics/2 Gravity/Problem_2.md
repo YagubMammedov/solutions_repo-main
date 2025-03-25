@@ -1,78 +1,49 @@
-# 1.1 Definitions and Physical Meaning
 
-Here is your content with properly formatted equations in English:  
 
----
 
-### **First Cosmic Velocity (Orbital Velocity)**
-- **Definition**: The minimum velocity needed to maintain a stable circular orbit around a celestial body.  
+## 2.1 Definitions and Physical Meaning
+
+#### **First Cosmic Velocity (Orbital Velocity)**
+- **Definition**: The minimum velocity needed to maintain a stable circular orbit around a celestial body.
 - **Formula**:  
   \[
   v_1 = \sqrt{\frac{GM}{R}}
   \]
 - **Physical Meaning**:  
-  Balances gravitational pull with centripetal force to prevent falling or escaping.  
+  The orbital velocity balances the gravitational pull with the centripetal force, keeping the object in orbit without falling toward the body or escaping from it.
 
 ---
 
-### **Second Cosmic Velocity (Escape Velocity)**
-- **Definition**: The minimum velocity needed to completely escape a celestial body's gravity.  
+#### **Second Cosmic Velocity (Escape Velocity)**
+- **Definition**: The minimum velocity needed to completely escape a celestial body's gravitational influence.
 - **Formula**:  
   \[
   v_2 = \sqrt{\frac{2GM}{R}} = \sqrt{2} \times v_1
   \]
 - **Physical Meaning**:  
-  Provides enough kinetic energy to overcome gravitational potential energy.  
+  This velocity provides enough kinetic energy to overcome the gravitational potential energy of the celestial body and break free from its gravitational field.
 
 ---
 
-### **Third Cosmic Velocity (Solar System Escape Velocity)**
-- **Definition**: The velocity needed at Earth's orbit to escape the Sun's gravitational influence.  
+#### **Third Cosmic Velocity (Solar System Escape Velocity)**
+- **Definition**: The velocity required at Earth's orbit to escape the Sun's gravitational influence.
 - **Formula**:  
   \[
-  v_3 = \sqrt{v_{esc,\odot}^2 + v_{orb,\oplus}^2}
+  v_3 = \sqrt{v_{\text{esc}, \odot}^2 + v_{\text{orb}, \oplus}^2}
   \]
   Where:  
-  - \( v_{esc,\odot} \) = Escape velocity from the Sun at Earth's orbit (~42.1 km/s)  
-  - \( v_{orb,\oplus} \) = Earth's orbital velocity (~29.8 km/s)  
+  - \( v_{\text{esc}, \odot} \) = Escape velocity from the Sun at Earth's orbit (~42.1 km/s)  
+  - \( v_{\text{orb}, \oplus} \) = Earth's orbital velocity (~29.8 km/s)
 
-Now the formulas are correctly formatted and readable in English. Let me know if you need further improvements! 🚀
+- **Physical Meaning**:  
+  This velocity is required to escape the combined gravitational forces of the Sun and Earth, typically considered for interstellar missions.
+
+---
+
+These equations are now written in LaTeX format and should display correctly in any environment that supports LaTeX (like Jupyter notebooks or LaTeX-compatible Markdown viewers).
 
 
-## ****1.2 Python Simulation**
-
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.constants import G
-
-# Celestial body data (radius in m, mass in kg)
-bodies = {
-    'Earth': (6.371e6, 5.972e24),
-    'Moon': (1.737e6, 7.342e22),
-    'Mars': (3.390e6, 6.390e23),
-    'Jupiter': (6.991e7, 1.898e27)
-}
-
-# Calculate velocities
-def cosmic_velocities(R, M):
-    v1 = np.sqrt(G*M/R)
-    v2 = np.sqrt(2)*v1
-    return v1, v2
-
-# Compute for all bodies
-results = {}
-for name, (R, M) in bodies.items():
-    results[name] = cosmic_velocities(R, M)
-
-# Third cosmic velocity (Earth-specific)
-v_earth_orbit = 29.8e3  # m/s
-v_sun_escape = 42.1e3    # m/s
-v3 = np.sqrt(v_earth_orbit**2 + (v_sun_escape - v_earth_orbit)**2)
-results['Earth'] += (v3,)
-```
-
-## **1.3 Graphical Representations**
+## **2.2 Graphical Representations**
 
 ### **A. Velocity Comparison Chart**
 ```python

@@ -322,61 +322,7 @@ ax.set_title("Halley's Comet Orbit (a=17.8 AU, e=0.967)", pad=20)
 plt.show()
 ```
 ![alt text](image-4.png)
-## **1.3.5. Extreme Cases Validation**
 
-Here is the format for **Extreme Cases Validation** presented in a **textbook-style** mathematical formulation:
-
----
-
-### **1.3.5. Extreme Cases Validation**
-
-#### **A. Binary Star System: Alpha Centauri**
-
-- **Total mass**:  
-  \[
-  M_{\text{tot}} = 2.0 M_{\odot}
-  \]
-
-- **Semi-major axis**:  
-  \[
-  a = 23.4 \, \text{AU}
-  \]
-
-- **Observed period**:  
-  \[
-  T_{\text{calc}} = \sqrt{\frac{a^3}{M_{\text{tot}}}} = \sqrt{\frac{23.4^3}{2.0}} \approx 79.8 \, \text{years}
-  \]
-
----
-
-#### **B. Supermassive Black Hole: Sagittarius A* (Sgr A*)**
-
-- **Orbital radius**:  
-  \[
-  r = 120 \, \text{AU}
-  \]
-
-- **Period**:  
-  \[
-  P = 16.1 \, \text{years}
-  \]
-
-- **Black Hole mass**:  
-  \[
-  M_{\text{BH}} = \frac{4 \pi^2 (120 \times 1.496 \times 10^{11})^3}{6.674 \times 10^{-11} \times (16.1 \times 3.156 \times 10^7)^2} \approx 4.1 \times 10^6 M_{\odot}
-  \]
-
----
-
-### **Explanation:**
-
-1. **Alpha Centauri**: This binary star system follows **Kepler's Third Law**, and by calculating the orbital period using the total mass and semi-major axis, we can compare the observed period with the calculated value, which is close (79.91 years vs. 79.8 years).
-
-2. **Sagittarius A***: Using the orbital radius and period of the stars orbiting the supermassive black hole at the center of the Milky Way, we calculate the mass of the black hole, which is estimated to be around **4.1 million solar masses**.
-
----
-
-This format follows **standard orbital mechanics** principles and would be commonly found in **astrophysics** textbooks.
 
 ## **1.3.6. Limitations and Corrections**
 
