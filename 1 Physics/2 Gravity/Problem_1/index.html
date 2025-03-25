@@ -394,34 +394,6 @@ plt.show()
 <h3 id="a-earth-moon-system"><strong>A. Earth-Moon System</strong></h3>
 <p>Here’s the <strong>Earth-Moon System</strong> in a format similar to what you would find in a textbook:</p>
 <hr/>
-<h3 id="earth-moon-system-orbital-parameters"><strong>Earth-Moon System Orbital Parameters</strong></h3>
-<ul>
-<li>
-<p><strong>Average radius</strong>:<br/>
-  [
-  r = 384,400 \, \text{km} = 3.844 \times 10^8 \, \text{m}
-  ]</p>
-</li>
-<li>
-<p><strong>Orbital period</strong>:<br/>
-  [
-  T = 27.32 \, \text{days} = 2.36 \times 10^6 \, \text{seconds}
-  ]</p>
-</li>
-<li>
-<p><strong>Earth's mass</strong>:<br/>
-  [
-  M = 5.972 \times 10^{24} \, \text{kg}
-  ]</p>
-</li>
-<li>
-<p><strong>Gravitational constant</strong>:<br/>
-  [
-  G = 6.674 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2}
-  ]</p>
-</li>
-</ul>
-<hr/>
 <h3 id="verification-using-keplers-third-law"><strong>Verification using Kepler's Third Law</strong></h3>
 <div class="arithmatex">\[
 T^2 = \frac{4\pi^2 r^3}{GM}
@@ -580,23 +552,64 @@ plt.show()
 </code></pre>
 <p><img alt="alt text" src="../image-4.png"/></p>
 <h2 id="135-extreme-cases-validation"><strong>1.3.5. Extreme Cases Validation</strong></h2>
-<h3 id="a-binary-star-system-alpha-centauri"><strong>A. Binary Star System: Alpha Centauri</strong></h3>
+<p>Here is the format for <strong>Extreme Cases Validation</strong> presented in a <strong>textbook-style</strong> mathematical formulation:</p>
+<hr/>
+<h3 id="135-extreme-cases-validation_1"><strong>1.3.5. Extreme Cases Validation</strong></h3>
+<h4 id="a-binary-star-system-alpha-centauri"><strong>A. Binary Star System: Alpha Centauri</strong></h4>
 <ul>
-<li>Total mass: 2.0 M☉</li>
-<li>Semi-major axis: 23.4 AU</li>
-<li>Observed period: 79.91 years
-[
-T_{calc} = \sqrt{\frac{a³}{M_{tot}}} = \sqrt{\frac{23.4^3}{2.0}} ≈ 79.8 \text{ years}
-]</li>
+<li>
+<p><strong>Total mass</strong>:<br/>
+  [
+  M_{\text{tot}} = 2.0 M_{\odot}
+  ]</p>
+</li>
+<li>
+<p><strong>Semi-major axis</strong>:<br/>
+  [
+  a = 23.4 \, \text{AU}
+  ]</p>
+</li>
+<li>
+<p><strong>Observed period</strong>:<br/>
+  [
+  T_{\text{calc}} = \sqrt{\frac{a^3}{M_{\text{tot}}}} = \sqrt{\frac{23.4^3}{2.0}} \approx 79.8 \, \text{years}
+  ]</p>
+</li>
 </ul>
-<h3 id="b-supermassive-black-hole-sgr-a"><strong>B. Supermassive Black Hole: Sgr A</strong>*</h3>
+<hr/>
+<h4 id="b-supermassive-black-hole-sagittarius-a-sgr-a"><strong>B. Supermassive Black Hole: Sagittarius A<em> (Sgr A</em>)</strong></h4>
 <ul>
-<li>Orbital radius: 120 AU</li>
-<li>Period: 16.1 years
-[
-M_{BH} = \frac{4π²(120×1.496×10¹¹)^3}{6.674×10⁻¹¹×(16.1×3.156×10⁷)^2} ≈ 4.1×10⁶ M☉
-]</li>
+<li>
+<p><strong>Orbital radius</strong>:<br/>
+  [
+  r = 120 \, \text{AU}
+  ]</p>
+</li>
+<li>
+<p><strong>Period</strong>:<br/>
+  [
+  P = 16.1 \, \text{years}
+  ]</p>
+</li>
+<li>
+<p><strong>Black Hole mass</strong>:<br/>
+  [
+  M_{\text{BH}} = \frac{4 \pi^2 (120 \times 1.496 \times 10^{11})^3}{6.674 \times 10^{-11} \times (16.1 \times 3.156 \times 10^7)^2} \approx 4.1 \times 10^6 M_{\odot}
+  ]</p>
+</li>
 </ul>
+<hr/>
+<h3 id="explanation"><strong>Explanation:</strong></h3>
+<ol>
+<li>
+<p><strong>Alpha Centauri</strong>: This binary star system follows <strong>Kepler's Third Law</strong>, and by calculating the orbital period using the total mass and semi-major axis, we can compare the observed period with the calculated value, which is close (79.91 years vs. 79.8 years).</p>
+</li>
+<li>
+<p><strong>Sagittarius A</strong><em>: Using the orbital radius and period of the stars orbiting the supermassive black hole at the center of the Milky Way, we calculate the mass of the black hole, which is estimated to be around </em><em>4.1 million solar masses</em>*.</p>
+</li>
+</ol>
+<hr/>
+<p>This format follows <strong>standard orbital mechanics</strong> principles and would be commonly found in <strong>astrophysics</strong> textbooks.</p>
 <h2 id="136-limitations-and-corrections"><strong>1.3.6. Limitations and Corrections</strong></h2>
 <p><strong>Significant Effects:</strong>
 1. <strong>Relativistic Precession:</strong> Mercury's orbit shows 43"/century deviation
@@ -606,52 +619,8 @@ M_{BH} = \frac{4π²(120×1.496×10¹¹)^3}{6.674×10⁻¹¹×(16.1×3.156×10�
 [
 T^2 ≈ \frac{4π²a³}{GM}\left(1 + \frac{3GM}{c²a}\right)
 ]</p>
-<h2 id="137-interactive-simulation-jupyter-notebook"><strong>1.3.7. Interactive Simulation (Jupyter Notebook)</strong></h2>
-<pre><code class="language-python">import ipywidgets as widgets
-from IPython.display import display
-
-@widgets.interact(
-    mass=(1e23, 1e30, 1e25),
-    radius=(1e6, 1e11, 1e8),
-    eccentricity=(0.0, 0.99, 0.1)
-)
-def plot_orbit(mass=5.972e24, radius=1.496e11, eccentricity=0):
-    """Interactive orbit visualizer"""
-    theta = np.linspace(0, 2*np.pi, 1000)
-    r = radius*(1-eccentricity**2)/(1+eccentricity*np.cos(theta))
-
-    fig, ax = plt.subplots(figsize=(8,8))
-    ax.plot(r*np.cos(theta), r*np.sin(theta), 'b-')
-    ax.plot(0, 0, 'ro', markersize=10)
-    ax.set_aspect('equal')
-    ax.set_title(f'Orbit Simulation\n(M={mass:.1e} kg, a={radius/1.496e11:.2f} AU, e={eccentricity:.2f})')
-    plt.show()
-</code></pre>
 <h1 id="gravity-simulation-with-multiple-graphical-outputs"><strong>Gravity Simulation with Multiple Graphical Outputs</strong></h1>
 <h2 id="141-core-orbit-simulation-code"><strong>1.4.1 Core Orbit Simulation Code</strong></h2>
-<pre><code class="language-python">import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib.animation import FuncAnimation
-from scipy.constants import G
-
-# System parameters
-M = 1.989e30  # Central mass (kg)
-m = 5.972e24  # Orbiting mass (kg)
-r = 1.496e11  # Initial radius (m)
-e = 0.5  # Eccentricity (0=circular, 0&lt;e&lt;1=elliptical)
-
-# Initial conditions for elliptical orbit
-a = r/(1-e)  # Semi-major axis
-r_peri = a*(1-e)
-v_peri = np.sqrt(G*M*(1+e)/r_peri)
-
-pos = np.array([r_peri, 0])
-vel = np.array([0, v_peri])
-
-# Simulation parameters
-dt = 86400  # Time step (1 day in seconds)
-steps = 1000  # Number of steps
-</code></pre>
 <h2 id="142-multiple-visualization-types">## <strong>1.4.2 Multiple Visualization Types</strong></h2>
 <h3 id="a-standard-2d-orbit-plot"><strong>A. Standard 2D Orbit Plot</strong></h3>
 <pre><code class="language-python"># Run simulation
@@ -676,80 +645,6 @@ plt.axis('equal')
 plt.show()
 </code></pre>
 <p><img alt="alt text" src="../image-5.png"/></p>
-<h3 id="b-animated-orbit"><strong>B. Animated Orbit</strong></h3>
-<pre><code class="language-python">fig, ax = plt.subplots(figsize=(8,8))
-ax.set_xlim(-1.5*a, 1.5*a)
-ax.set_ylim(-1.5*a, 1.5*a)
-ax.set_aspect('equal')
-ax.grid()
-
-planet, = ax.plot([], [], 'bo', markersize=10)
-orbit, = ax.plot([], [], 'b-', alpha=0.3)
-star = ax.scatter([0], [0], c='yellow', s=300)
-
-def init():
-    planet.set_data([], [])
-    orbit.set_data([], [])
-    return planet, orbit
-
-def update(frame):
-    planet.set_data(positions[frame,0], positions[frame,1])
-    orbit.set_data(positions[:frame,0], positions[:frame,1])
-    return planet, orbit
-
-ani = FuncAnimation(fig, update, frames=steps, init_func=init, 
-                   blit=True, interval=20)
-plt.close()
-HTML(ani.to_html5_video())
-</code></pre>
-<h3 id="c-keplers-law-verification-plot"><strong>C. Kepler's Law Verification Plot</strong></h3>
-<pre><code class="language-python"># Test multiple eccentricities
-eccentricities = np.linspace(0, 0.9, 5)
-periods = []
-semi_major_axes = []
-
-for e_test in eccentricities:
-    a_test = r/(1-e_test)
-    r_start = a_test*(1-e_test)
-    v_start = np.sqrt(G*M*(1+e_test)/r_start)
-
-    pos = np.array([r_start, 0])
-    vel = np.array([0, v_start])
-
-    # Find period
-    x_sign_changes = 0
-    t = 0
-    while x_sign_changes &lt; 2:
-        r_mag = np.linalg.norm(pos)
-        accel = -G*M*pos/r_mag**3
-        vel += accel*dt
-        pos += vel*dt
-        t += dt
-        if pos[0]*vel[0] &gt; 0 and pos[0] &gt; 0:
-            x_sign_changes += 1
-
-    periods.append(t)
-    semi_major_axes.append(a_test)
-
-![alt text](image-6.png)
-
-plt.figure(figsize=(10,6))
-plt.plot(np.array(semi_major_axes)**3, np.array(periods)**2, 'ro', label='Simulation')
-plt.plot(np.array(semi_major_axes)**3, 4*np.pi**2*np.array(semi_major_axes)**3/(G*M), 
-         'b-', label='Theory')
-plt.xlabel('Semi-Major Axis Cubed (a³) [m³]')
-plt.ylabel('Orbital Period Squared (T²) [s²]')
-plt.title('Kepler\'s Third Law Verification for Different Eccentricities')
-plt.legend()
-plt.grid()
-plt.show()
-</code></pre>
-<h2 id="5-conclusion"><strong>5. Conclusion</strong></h2>
-<p>This implementation provides:
-- Multiple visualization methods (static, animated, 3D)
-- Verification of Kepler's Third Law
-- Energy conservation analysis
-- Support for various orbital parameter</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
