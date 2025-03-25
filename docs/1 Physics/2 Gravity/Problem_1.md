@@ -130,22 +130,22 @@ Kepler's Third Law (T² ∝ r³) serves as a fundamental tool for:
 - Verifying gravitational theories
 - Planning space missions
 
-## **1.2.2. Key Applications**
+**Planetary Mass Formula:**  
 
-### **A. Calculating Planetary Masses**
-**Method:**  
-For a moon orbiting a planet:
 \[
-M = \frac{4\pi^2 r^3}{GT^2}
+\boxed{M = \dfrac{4\pi^2 r^3}{G T^2}}
 \]
 
-**Example:**  
-Jupiter's mass calculation using Ganymede's orbit:
-- Orbital radius (r) = 1.07×10⁹ m
-- Period (T) = 7.15 days (6.18×10⁵ s)
+**Where:**  
+- \( M \) = Planet mass (kg)  
+- \( r \) = Moon's orbital radius (m)  
+- \( T \) = Moon's orbital period (s)  
+- \( G \) = \( 6.674 \times 10^{-11} \) m³ kg⁻¹ s⁻²  
+
+**Example (Jupiter):**  
 \[
-M_{Jupiter} = \frac{4\pi^2 (1.07×10⁹)^3}{6.67×10⁻¹¹ × (6.18×10⁵)^2} ≈ 1.90×10²⁷ kg
-\]
+M = \dfrac{4\pi^2 (1.07 \times 10^9)^3}{(6.67 \times 10^{-11}) (6.18 \times 10^5)^2} \approx 1.90 \times 10^{27} \text{ kg}
+\]  
 
 ### **B. Determining Astronomical Distances**
 **Technique:**  
