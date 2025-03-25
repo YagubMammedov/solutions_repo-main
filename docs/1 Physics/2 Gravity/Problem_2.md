@@ -1,46 +1,53 @@
 
 
-
-## 2.1 Definitions and Physical Meaning
+### 2.1 Definitions and Physical Meaning
 
 #### **First Cosmic Velocity (Orbital Velocity)**
+
 - **Definition**: The minimum velocity needed to maintain a stable circular orbit around a celestial body.
+
 - **Formula**:  
-  \[
-  v_1 = \sqrt{\frac{GM}{R}}
-  \]
+  $$ 
+  v_1 = \sqrt{\frac{GM}{R}} 
+  $$
+
 - **Physical Meaning**:  
   The orbital velocity balances the gravitational pull with the centripetal force, keeping the object in orbit without falling toward the body or escaping from it.
 
 ---
 
 #### **Second Cosmic Velocity (Escape Velocity)**
+
 - **Definition**: The minimum velocity needed to completely escape a celestial body's gravitational influence.
+
 - **Formula**:  
-  \[
-  v_2 = \sqrt{\frac{2GM}{R}} = \sqrt{2} \times v_1
-  \]
+  $$ 
+  v_2 = \sqrt{\frac{2GM}{R}} = \sqrt{2} \times v_1 
+  $$
+
 - **Physical Meaning**:  
   This velocity provides enough kinetic energy to overcome the gravitational potential energy of the celestial body and break free from its gravitational field.
 
 ---
 
 #### **Third Cosmic Velocity (Solar System Escape Velocity)**
+
 - **Definition**: The velocity required at Earth's orbit to escape the Sun's gravitational influence.
+
 - **Formula**:  
-  \[
-  v_3 = \sqrt{v_{\text{esc}, \odot}^2 + v_{\text{orb}, \oplus}^2}
-  \]
+  $$ 
+  v_3 = \sqrt{v_{\text{esc}, \odot}^2 + v_{\text{orb}, \oplus}^2} 
+  $$  
   Where:  
-  - \( v_{\text{esc}, \odot} \) = Escape velocity from the Sun at Earth's orbit (~42.1 km/s)  
-  - \( v_{\text{orb}, \oplus} \) = Earth's orbital velocity (~29.8 km/s)
+  - $v_{\text{esc}, \odot}$ = Escape velocity from the Sun at Earth's orbit (~42.1 km/s)  
+  - $v_{\text{orb}, \oplus}$ = Earth's orbital velocity (~29.8 km/s)
 
 - **Physical Meaning**:  
   This velocity is required to escape the combined gravitational forces of the Sun and Earth, typically considered for interstellar missions.
 
 ---
 
-These equations are now written in LaTeX format and should display correctly in any environment that supports LaTeX (like Jupyter notebooks or LaTeX-compatible Markdown viewers).
+Let me know when you're ready to send the next task, and I will follow the same format.
 
 
 ## **2.2 Graphical Representations**
