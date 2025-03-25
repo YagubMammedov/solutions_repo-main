@@ -299,6 +299,137 @@ v^2 = GM \left( \frac{2}{r} - \frac{1}{a} \right)
 <h2 id="322-visualization-analysis">**3.2.2 Visualization &amp; Analysis</h2>
 <p>Static Trajectory Plot
 <img alt="alt text" src="../image-21.png"/></p>
+<h3 id="431-fundamental-equations"><strong>4.3.1. Fundamental Equations</strong></h3>
+<h4 id="newtons-law-of-gravitation">Newton's Law of Gravitation</h4>
+<div class="arithmatex">\[
+\mathbf{F} = -\frac{GMm}{r^2}\hat{\mathbf{r}}
+\]</div>
+<h4 id="equations-of-motion-2d">Equations of Motion (2D)</h4>
+<div class="arithmatex">\[
+\begin{cases}
+\dfrac{d^2x}{dt^2} = -\dfrac{GMx}{(x^2+y^2)^{3/2}} \\
+\dfrac{d^2y}{dt^2} = -\dfrac{GMy}{(x^2+y^2)^{3/2}}
+\end{cases}
+\]</div>
+<h3 id="2-velocity-thresholds"><strong>2. Velocity Thresholds</strong></h3>
+<h4 id="circular-orbit-velocity">Circular Orbit Velocity</h4>
+<div class="arithmatex">\[
+v_{\text{circ}} = \sqrt{\dfrac{GM}{r}}
+\]</div>
+<h4 id="escape-velocity">Escape Velocity</h4>
+<div class="arithmatex">\[
+v_{\text{esc}} = \sqrt{\dfrac{2GM}{r}}
+\]</div>
+<h3 id="3-energy-conditions"><strong>3. Energy Conditions</strong></h3>
+<h4 id="specific-orbital-energy">Specific Orbital Energy</h4>
+<div class="arithmatex">\[
+E = \dfrac{v^2}{2} - \dfrac{GM}{r}
+\]</div>
+<table>
+<thead>
+<tr>
+<th>Energy State</th>
+<th>Trajectory Type</th>
+<th>Mission Scenario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\( E &lt; 0 \)</span></td>
+<td>Elliptical</td>
+<td>Stable orbit</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\( E = 0 \)</span></td>
+<td>Parabolic</td>
+<td>Escape trajectory</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\( E &gt; 0 \)</span></td>
+<td>Hyperbolic</td>
+<td>Flyby maneuvers</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-mission-applications"><strong>4. Mission Applications</strong></h3>
+<h4 id="orbital-insertion">Orbital Insertion</h4>
+<div class="arithmatex">\[
+\Delta v_{\text{insert}} = \sqrt{\dfrac{GM}{r}} - v_{\text{current}}
+\]</div>
+<h4 id="deorbit-burn">Deorbit Burn</h4>
+<div class="arithmatex">\[
+\Delta v_{\text{deorbit}} = v_{\text{circ}} - \sqrt{\dfrac{GM}{a_{\text{new}}}}
+\]</div>
+<h4 id="hohmann-transfer">Hohmann Transfer</h4>
+<div class="arithmatex">\[
+\Delta v_{\text{total}} = \sqrt{\dfrac{GM}{r_1}}\left(\sqrt{\dfrac{2r_2}{r_1+r_2}}-1\right) + \sqrt{\dfrac{GM}{r_2}}\left(1-\sqrt{\dfrac{2r_1}{r_1+r_2}}\right)
+\]</div>
+<h3 id="5-atmospheric-reentry"><strong>5. Atmospheric Reentry</strong></h3>
+<h4 id="ballistic-coefficient">Ballistic Coefficient</h4>
+<div class="arithmatex">\[
+\beta = \dfrac{m}{C_d A}
+\]</div>
+<h4 id="deceleration-force">Deceleration Force</h4>
+<div class="arithmatex">\[
+F_{\text{drag}} = \dfrac{1}{2}\rho v^2 C_d A
+\]</div>
+<p>These formulas will:
+1. Copy perfectly to any technical document
+2. Render correctly in Markdown/LaTeX editors
+3. Maintain proper mathematical formatting
+4. Work in Jupyter notebooks and VS Code</p>
+<p><img alt="alt text" src="../image-22.png"/></p>
+<h2 id="44-orbital-trajectory-formulas-short-version"><strong>4.4. </strong>Orbital Trajectory Formulas (Short Version):**</h2>
+<ol>
+<li>
+<p><strong>Gravity Force</strong><br/>
+<code>F = G·M·m / r²</code><br/>
+<em>(G=6.67×10⁻¹¹, M=Earth mass)</em></p>
+</li>
+<li>
+<p><strong>Orbit Speed</strong><br/>
+<code>vₒ = √(GM/r)</code><br/>
+<em>Example: 400km altitude → ~7.7 km/s</em></p>
+</li>
+<li>
+<p><strong>Escape Speed</strong><br/>
+<code>vₑ = √(2GM/r) ≈ 1.414×vₒ</code><br/>
+<em>Same example → ~10.9 km/s</em></p>
+</li>
+<li>
+<p><strong>Trajectory Types</strong>:</p>
+</li>
+<li><code>E &lt; 0</code>: Ellipse (E = ½v² - GM/r)</li>
+<li><code>E = 0</code>: Parabola (escape)</li>
+<li>
+<p><code>E &gt; 0</code>: Hyperbola</p>
+</li>
+<li>
+<p><strong>Orbit Period</strong><br/>
+<code>T = 2π√(a³/GM)</code><br/>
+<em>(a = semi-major axis)</em></p>
+</li>
+</ol>
+<p><strong>Key Numbers (Earth)</strong>:<br/>
+- Radius: 6,371 km<br/>
+- 400km orbit: 7.67 km/s<br/>
+- Escape: 11.2 km/s (surface)</p>
+<p><img alt="alt text" src="../image-23.png"/>
+Key Features:
+Physics Implementation:</p>
+<p>Solves Newton's gravitational equations numerically</p>
+<p>Handles both circular/elliptical orbits and escape trajectories</p>
+<p>Accounts for launch angle and altitude</p>
+<p>Visual Output:</p>
+<p>Shows 4 distinct trajectory types</p>
+<p>Earth drawn to scale (radius ~6371 km)</p>
+<p>Color-coded paths with starting markers</p>
+<p>Includes velocity formulas on plot</p>
+<p>Example Cases:</p>
+<p>Blue: Stable circular orbit (ISS-like, 7.7 km/s)</p>
+<p>Green: Elliptical orbit (8.5 km/s)</p>
+<p>Red: Escape trajectory (11 km/s)</p>
+<p>Orange: Suborbital path (45° launch)</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
