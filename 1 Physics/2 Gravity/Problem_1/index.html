@@ -322,15 +322,6 @@ plt.show()
 <div class="arithmatex">\[
 \boxed{M = \dfrac{4\pi^2 r^3}{G T^2}}
 \]</div>
-<p><strong>Where:</strong><br/>
-- <span class="arithmatex">\( M \)</span> = Planet mass (kg)<br/>
-- <span class="arithmatex">\( r \)</span> = Moon's orbital radius (m)<br/>
-- <span class="arithmatex">\( T \)</span> = Moon's orbital period (s)<br/>
-- <span class="arithmatex">\( G \)</span> = <span class="arithmatex">\( 6.674 \times 10^{-11} \)</span> m³ kg⁻¹ s⁻²  </p>
-<p><strong>Example (Jupiter):</strong><br/>
-[
-M = \dfrac{4\pi^2 (1.07 \times 10^9)^3}{(6.67 \times 10^{-11}) (6.18 \times 10^5)^2} \approx 1.90 \times 10^{27} \text{ kg}
-]  </p>
 <h3 id="b-determining-astronomical-distances"><strong>B. Determining Astronomical Distances</strong></h3>
 <p><strong>Technique:</strong><br/>
 Used when direct measurement is impossible:
@@ -348,25 +339,7 @@ Binary star systems - the only direct method to measure stellar masses.</p>
 |-----------|--------------|---------------------|--------------------|
 | Kepler-186f | 129.9       | 0.432              | 1.44              |
 | TRAPPIST-1e | 6.10        | 0.038              | 0.62              |</p>
-<h2 id="123-python-simulation-mass-distance-calculator"><strong>1.2.3. Python Simulation: Mass-Distance Calculator</strong></h2>
-<pre><code class="language-python">import numpy as np
-from scipy.constants import G
-
-def calculate_mass(r, T):
-    """Calculate central mass given orbital radius and period"""
-    return (4 * np.pi**2 * r**3) / (G * T**2)
-
-# Example: Earth-Sun system
-r_earth = 1.496e11  # meters
-T_earth = 3.156e7    # seconds
-print(f"Calculated Sun mass: {calculate_mass(r_earth, T_earth):.2e} kg")
-</code></pre>
-<p><strong>Output:</strong><br/>
-<code>Calculated Sun mass: 1.99e+30 kg</code><br/>
-<em>(Matches accepted value of 1.989×10³⁰ kg)</em></p>
-<h2 id="124-graphical-representations"><strong>1.2.4. Graphical Representations</strong></h2>
-<h3 id="figure-1-solar-system-verification"><strong>Figure 1: Solar System Verification</strong></h3>
-<p><img alt="Solar System Log-Log Plot" src="https://www.researchgate.net/profile/Michael-Roman/publication/335920909/figure/fig1/AS:805370845818880@1568668312804/Keplers-Third-Law-for-the-Planets-of-the-Solar-System.ppm"/></p>
+<h2 id="123-graphical-representations"><strong>1.2.3. Graphical Representations</strong></h2>
 <h3 id="figure-2-exoplanet-period-distance-relation"><strong>Figure 2: Exoplanet Period-Distance Relation</strong></h3>
 <pre><code class="language-python">import matplotlib.pyplot as plt
 
@@ -382,21 +355,6 @@ plt.grid(which='both')
 plt.show()
 </code></pre>
 <p><img alt="alt text" src="../image-2.png"/></p>
-<h2 id="125-extension-to-complex-systems"><strong>1.2.5. Extension to Complex Systems</strong></h2>
-<h3 id="a-elliptical-orbits"><strong>A. Elliptical Orbits</strong></h3>
-<p>[
-T^2 = \frac{4\pi^2 a^3}{G(M+m)}
-]
-Where <strong>a</strong> = semi-major axis</p>
-<p><strong>Implications:</strong>
-- Explains cometary orbits
-- Essential for spacecraft trajectory design
-- Accounts for binary star dynamics</p>
-<h3 id="b-multi-body-systems"><strong>B. Multi-Body Systems</strong></h3>
-<p><strong>Limitations:</strong>
-- Requires numerical methods (N-body simulations)
-- Perturbation theory needed for precise calculations
-- Chaotic effects in dense systems</p>
 <h2 id="126-modern-astronomical-applications"><strong>1.2.6. Modern Astronomical Applications</strong></h2>
 <table>
 <thead>
@@ -434,17 +392,54 @@ Where <strong>a</strong> = semi-major axis</p>
 <h1 id="real-world-analysis-of-keplers-third-law"><strong>Real-World Analysis of Kepler's Third Law</strong></h1>
 <h2 id="131-solar-system-case-studies"><strong>1.3.1. Solar System Case Studies</strong></h2>
 <h3 id="a-earth-moon-system"><strong>A. Earth-Moon System</strong></h3>
-<p><strong>Orbital Parameters:</strong>
-- Average radius (r): 384,400 km
-- Orbital period (T): 27.32 days
-- Earth's mass (M): 5.972 × 10²⁴ kg</p>
-<p><strong>Verification:</strong>
-[
-T^2 = \frac{4π²r³}{GM} = \frac{4π²(3.844×10⁸)^3}{6.674×10⁻¹¹ × 5.972×10²⁴} ≈ 7.35×10¹² s²
-]
-[
-(27.32×24×3600)^2 ≈ 7.35×10¹² s²
-]</p>
+<p>Here’s the <strong>Earth-Moon System</strong> in a format similar to what you would find in a textbook:</p>
+<hr/>
+<h3 id="earth-moon-system-orbital-parameters"><strong>Earth-Moon System Orbital Parameters</strong></h3>
+<ul>
+<li>
+<p><strong>Average radius</strong>:<br/>
+  [
+  r = 384,400 \, \text{km} = 3.844 \times 10^8 \, \text{m}
+  ]</p>
+</li>
+<li>
+<p><strong>Orbital period</strong>:<br/>
+  [
+  T = 27.32 \, \text{days} = 2.36 \times 10^6 \, \text{seconds}
+  ]</p>
+</li>
+<li>
+<p><strong>Earth's mass</strong>:<br/>
+  [
+  M = 5.972 \times 10^{24} \, \text{kg}
+  ]</p>
+</li>
+<li>
+<p><strong>Gravitational constant</strong>:<br/>
+  [
+  G = 6.674 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2}
+  ]</p>
+</li>
+</ul>
+<hr/>
+<h3 id="verification-using-keplers-third-law"><strong>Verification using Kepler's Third Law</strong></h3>
+<div class="arithmatex">\[
+T^2 = \frac{4\pi^2 r^3}{GM}
+\]</div>
+<p>Substitute the values:</p>
+<div class="arithmatex">\[
+T^2 = \frac{4\pi^2 (3.844 \times 10^8)^3}{6.674 \times 10^{-11} \times 5.972 \times 10^{24}}
+\]</div>
+<div class="arithmatex">\[
+T^2 \approx 7.35 \times 10^{12} \, \text{s}^2
+\]</div>
+<p>Now, compare with the square of the orbital period:</p>
+<div class="arithmatex">\[
+(27.32 \times 24 \times 3600)^2 \approx 7.35 \times 10^{12} \, \text{s}^2
+\]</div>
+<p>Thus, <strong>Kepler’s Third Law is verified</strong> ✅</p>
+<hr/>
+<p>This format is <strong>textbook-style</strong> and will display correctly in <strong>LaTeX-compatible systems</strong> (e.g., Markdown, PDF, Word, TeX).</p>
 <h3 id="b-planetary-orbits-comparison"><strong>B. Planetary Orbits Comparison</strong></h3>
 <table>
 <thead>
