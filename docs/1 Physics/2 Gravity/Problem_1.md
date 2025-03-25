@@ -136,16 +136,7 @@ Kepler's Third Law (T² ∝ r³) serves as a fundamental tool for:
 \boxed{M = \dfrac{4\pi^2 r^3}{G T^2}}
 \]
 
-**Where:**  
-- \( M \) = Planet mass (kg)  
-- \( r \) = Moon's orbital radius (m)  
-- \( T \) = Moon's orbital period (s)  
-- \( G \) = \( 6.674 \times 10^{-11} \) m³ kg⁻¹ s⁻²  
 
-**Example (Jupiter):**  
-\[
-M = \dfrac{4\pi^2 (1.07 \times 10^9)^3}{(6.67 \times 10^{-11}) (6.18 \times 10^5)^2} \approx 1.90 \times 10^{27} \text{ kg}
-\]  
 
 ### **B. Determining Astronomical Distances**
 **Technique:**  
@@ -168,30 +159,8 @@ Binary star systems - the only direct method to measure stellar masses.
 | Kepler-186f | 129.9       | 0.432              | 1.44              |
 | TRAPPIST-1e | 6.10        | 0.038              | 0.62              |
 
-## **1.2.3. Python Simulation: Mass-Distance Calculator**
 
-```python
-import numpy as np
-from scipy.constants import G
-
-def calculate_mass(r, T):
-    """Calculate central mass given orbital radius and period"""
-    return (4 * np.pi**2 * r**3) / (G * T**2)
-
-# Example: Earth-Sun system
-r_earth = 1.496e11  # meters
-T_earth = 3.156e7    # seconds
-print(f"Calculated Sun mass: {calculate_mass(r_earth, T_earth):.2e} kg")
-```
-
-**Output:**  
-`Calculated Sun mass: 1.99e+30 kg`  
-*(Matches accepted value of 1.989×10³⁰ kg)*
-
-## **1.2.4. Graphical Representations**
-
-### **Figure 1: Solar System Verification**
-![Solar System Log-Log Plot](https://www.researchgate.net/profile/Michael-Roman/publication/335920909/figure/fig1/AS:805370845818880@1568668312804/Keplers-Third-Law-for-the-Planets-of-the-Solar-System.ppm)
+## **1.2.3. Graphical Representations**
 
 ### **Figure 2: Exoplanet Period-Distance Relation**
 ```python
@@ -209,24 +178,7 @@ plt.grid(which='both')
 plt.show()
 ```
 ![alt text](image-2.png)
-## **1.2.5. Extension to Complex Systems**
 
-### **A. Elliptical Orbits**
-\[
-T^2 = \frac{4\pi^2 a^3}{G(M+m)}
-\]
-Where **a** = semi-major axis
-
-**Implications:**
-- Explains cometary orbits
-- Essential for spacecraft trajectory design
-- Accounts for binary star dynamics
-
-### **B. Multi-Body Systems**
-**Limitations:**
-- Requires numerical methods (N-body simulations)
-- Perturbation theory needed for precise calculations
-- Chaotic effects in dense systems
 
 ## **1.2.6. Modern Astronomical Applications**
 
@@ -247,19 +199,61 @@ Where **a** = semi-major axis
 ## **1.3.1. Solar System Case Studies**
 
 ### **A. Earth-Moon System**
-**Orbital Parameters:**
-- Average radius (r): 384,400 km
-- Orbital period (T): 27.32 days
-- Earth's mass (M): 5.972 × 10²⁴ kg
+Here’s the **Earth-Moon System** in a format similar to what you would find in a textbook:
 
-**Verification:**
+---
+
+### **Earth-Moon System Orbital Parameters**
+
+- **Average radius**:  
+  \[
+  r = 384,400 \, \text{km} = 3.844 \times 10^8 \, \text{m}
+  \]
+
+- **Orbital period**:  
+  \[
+  T = 27.32 \, \text{days} = 2.36 \times 10^6 \, \text{seconds}
+  \]
+
+- **Earth's mass**:  
+  \[
+  M = 5.972 \times 10^{24} \, \text{kg}
+  \]
+
+- **Gravitational constant**:  
+  \[
+  G = 6.674 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2}
+  \]
+
+---
+
+### **Verification using Kepler's Third Law**
+
 \[
-T^2 = \frac{4π²r³}{GM} = \frac{4π²(3.844×10⁸)^3}{6.674×10⁻¹¹ × 5.972×10²⁴} ≈ 7.35×10¹² s²
-\]
-\[
-(27.32×24×3600)^2 ≈ 7.35×10¹² s²
+T^2 = \frac{4\pi^2 r^3}{GM}
 \]
 
+Substitute the values:
+
+\[
+T^2 = \frac{4\pi^2 (3.844 \times 10^8)^3}{6.674 \times 10^{-11} \times 5.972 \times 10^{24}}
+\]
+
+\[
+T^2 \approx 7.35 \times 10^{12} \, \text{s}^2
+\]
+
+Now, compare with the square of the orbital period:
+
+\[
+(27.32 \times 24 \times 3600)^2 \approx 7.35 \times 10^{12} \, \text{s}^2
+\]
+
+Thus, **Kepler’s Third Law is verified** ✅
+
+---
+
+This format is **textbook-style** and will display correctly in **LaTeX-compatible systems** (e.g., Markdown, PDF, Word, TeX).
 ### **B. Planetary Orbits Comparison**
 
 | Planet | Orbital Radius (AU) | Period (years) | T²/r³ |
