@@ -118,42 +118,52 @@ This complete analysis provides:
 
 
 # **Mathematical Analysis of Cosmic Velocities**
-
-## **1.2.1 Fundamental Derivations**
-
-### **First Cosmic Velocity (Orbital Velocity)**
-**Derivation from Force Balance:**
-\[
-\frac{GMm}{r^2} = \frac{mv_1^2}{r} \implies v_1 = \sqrt{\frac{GM}{r}}
-\]
-
-**Key Parameters:**
-- \( G \): Gravitational constant (6.674×10⁻¹¹ N·m²/kg²)
-- \( M \): Central body mass
-- \( r \): Distance from center (radius + altitude)
+Got it! Here's the markdown for Visual Studio Code with the required mathematical notations:
 
 ---
 
-### **Second Cosmic Velocity (Escape Velocity)**
-**Energy Conservation Approach:**
-\[
-\frac{1}{2}mv_2^2 - \frac{GMm}{r} = 0 \implies v_2 = \sqrt{\frac{2GM}{r}}
-\]
+### 1.2.1 Fundamental Derivations
 
-**Critical Insight:**
-- Exactly √2 times orbital velocity
-- Independent of projectile mass
+#### **First Cosmic Velocity (Orbital Velocity)**
+
+- **Derivation from Force Balance**:  
+  $$ 
+  \frac{GMm}{r^2} = \frac{mv_1^2}{r} \implies v_1 = \sqrt{\frac{GM}{r}} 
+  $$
+
+- **Key Parameters**:  
+  - $G$: Gravitational constant (6.674×10⁻¹¹ N·m²/kg²)  
+  - $M$: Central body mass  
+  - $r$: Distance from the center (radius + altitude)
 
 ---
 
-### **Third Cosmic Velocity (Solar System Escape)**
-**Vector Summation:**
-\[
-v_3 = \sqrt{v_{\text{esc,⊙}}^2 + (v_{\text{orb,⊕}} - v_{\text{esc,⊕}})^2}
-\]
-Where:
-- \( v_{\text{esc,⊙}} \): Solar escape velocity at Earth's orbit (~42.1 km/s)
-- \( v_{\text{orb,⊕}} \): Earth's orbital speed (~29.8 km/s)
+#### **Second Cosmic Velocity (Escape Velocity)**
+
+- **Energy Conservation Approach**:  
+  $$ 
+  \frac{1}{2}mv_2^2 - \frac{GMm}{r} = 0 \implies v_2 = \sqrt{\frac{2GM}{r}} 
+  $$
+
+- **Critical Insight**:  
+  - Escape velocity is exactly $\sqrt{2}$ times the orbital velocity  
+  - Independent of projectile mass
+
+---
+
+#### **Third Cosmic Velocity (Solar System Escape)**
+
+- **Vector Summation**:  
+  $$ 
+  v_3 = \sqrt{v_{\text{esc,⊙}}^2 + (v_{\text{orb,⊕}} - v_{\text{esc,⊕}})^2} 
+  $$  
+  Where:  
+  - $v_{\text{esc,⊙}}$: Solar escape velocity at Earth's orbit (~42.1 km/s)  
+  - $v_{\text{orb,⊕}}$: Earth's orbital speed (~29.8 km/s)
+
+---
+
+This should be easy to copy and paste into Visual Studio Code now. Let me know if you need any further adjustments!
 ![alt text](image-11.png)
 
 
