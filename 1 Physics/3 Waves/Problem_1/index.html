@@ -128,7 +128,44 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-1">Problem 1</h1>
+<p>Here’s a complete explanation of the mathematical model and Python code to visualize the wave interference pattern.  </p>
+<hr/>
+<h3 id="1-mathematical-model"><strong>1. Mathematical Model</strong></h3>
+<p>A wave originating from a point source at <span class="arithmatex">\((x_0, y_0)\)</span> is described by the equation:</p>
+<div class="arithmatex">\[
+\eta(x, y, t) = \frac{A}{\sqrt{r}} \cos(kr - \omega t + \phi)
+\]</div>
+<p>where:<br/>
+- <span class="arithmatex">\( A \)</span> is the wave amplitude.<br/>
+- <span class="arithmatex">\( k = \frac{2\pi}{\lambda} \)</span> is the wave number (related to the wavelength <span class="arithmatex">\( \lambda \)</span>).<br/>
+- <span class="arithmatex">\( \omega = 2\pi f \)</span> is the angular frequency (<span class="arithmatex">\( f \)</span> is the frequency).<br/>
+- <span class="arithmatex">\( r = \sqrt{(x - x_0)^2 + (y - y_0)^2} \)</span> is the distance from the source at <span class="arithmatex">\((x_0, y_0)\)</span> to the point <span class="arithmatex">\((x, y)\)</span>.<br/>
+- <span class="arithmatex">\( \phi \)</span> is the initial phase.  </p>
+<p>For multiple wave sources (e.g., placed at the vertices of a regular polygon), the total interference pattern is obtained by summing all individual waves:</p>
+<div class="arithmatex">\[
+\eta_{sum}(x, y, t) = \sum_{i=1}^{N} \eta_i(x, y, t)
+\]</div>
+<p>where <span class="arithmatex">\( N \)</span> is the number of wave sources.</p>
+<hr/>
+<h3 id="2-python-simulation"><strong>2. Python Simulation</strong></h3>
+<p>This Python code simulates and visualizes the interference pattern caused by multiple wave sources placed at the vertices of a regular polygon.</p>
+<h4 id="key-steps-in-the-code"><strong>📌 Key Steps in the Code:</strong></h4>
+<ul>
+<li><strong>Define source positions</strong>: Place wave sources at the vertices of a chosen polygon.  </li>
+<li><strong>Calculate wave contributions</strong>: Compute waves from each source.  </li>
+<li><strong>Apply superposition</strong>: Sum all wave contributions.  </li>
+<li><strong>Plot the interference pattern</strong>: Visualize the result.  </li>
+</ul>
+<p><img alt="alt text" src="../image.png"/></p>
+<p>The generated graph represents the <strong>wave interference pattern</strong> on a water surface, where multiple wave sources are placed at the vertices of a regular polygon (e.g., hexagon).  </p>
+<h3 id="what-the-graph-shows"><strong>What the graph shows:</strong></h3>
+<ul>
+<li><strong>Red and blue regions</strong>: Represent areas of <strong>constructive and destructive interference</strong>.  </li>
+<li><strong>Red</strong> areas indicate wave peaks reinforcing each other (high displacement).  </li>
+<li><strong>Blue</strong> areas indicate wave troughs reinforcing each other (low displacement).  </li>
+<li><strong>Alternating patterns</strong>: Form due to the <strong>superposition</strong> of waves from multiple sources.  </li>
+<li><strong>Circular wavefronts</strong>: Originate from each source, interfering with others to create a complex pattern.  </li>
+</ul>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
