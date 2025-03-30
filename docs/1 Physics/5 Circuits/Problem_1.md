@@ -92,4 +92,5 @@ R_{\text{eq}} = \left(\frac{1}{6} + \frac{1}{3}\right)^{-1} = \left(\frac{1}{6} 
    - Parallel: 10Ω∥20Ω → 6.67Ω  
    - Bridge circuit → 1Ω  
 
-
+2.
+![alt text](image-1.png)
