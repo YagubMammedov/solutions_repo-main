@@ -222,8 +222,44 @@ R_{\text{eq}} = \left(\frac{1}{6} + \frac{1}{3}\right)^{-1} = \left(\frac{1}{6} 
 <li>Parallel: 10Ω∥20Ω → 6.67Ω  </li>
 <li>Bridge circuit → 1Ω  </li>
 </ol>
-<p>2.
+<h1 id="problem-12">Problem 1.2</h1>
+<p>Here are the <strong>mathematical formulas</strong> for calculating equivalent resistance:  </p>
+<h3 id="1-series-resistance"><strong>1. Series Resistance</strong></h3>
+<p>For resistors connected in series, the equivalent resistance is the sum of all resistances:  </p>
+<div class="arithmatex">\[
+R_{\text{eq}} = R_1 + R_2 + R_3 + \dots + R_n
+\]</div>
+<h3 id="2-parallel-resistance"><strong>2. Parallel Resistance</strong></h3>
+<p>For resistors connected in parallel, the reciprocal of the equivalent resistance is the sum of the reciprocals of each resistance:  </p>
+<div class="arithmatex">\[
+\frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} + \dots + \frac{1}{R_n}
+\]</div>
+<p>For two resistors in parallel:  </p>
+<div class="arithmatex">\[
+R_{\text{eq}} = \frac{R_1 R_2}{R_1 + R_2}
+\]</div>
+<h3 id="3-combination-of-series-and-parallel-circuits"><strong>3. Combination of Series and Parallel Circuits</strong></h3>
+<p>If a circuit consists of both series and parallel resistances, apply the formulas iteratively:<br/>
+1. <strong>Simplify parallel resistances</strong> first using:  </p>
+<p>[
+   R_{\text{parallel}} = \frac{R_1 R_2}{R_1 + R_2}
+   ]</p>
+<ol>
+<li><strong>Then, add series resistances</strong> using:  </li>
+</ol>
+<p>[
+   R_{\text{eq}} = R_{\text{series}} + R_{\text{parallel}}
+   ]</p>
+<p>These formulas allow step-by-step reduction of any complex circuit using <strong>graph theory or iterative simplification</strong>. 🚀
 <img alt="alt text" src="../image-1.png"/></p>
+<h3 id="explanation-of-the-graph"><strong>Explanation of the Graph</strong></h3>
+<p>The graph represents the <strong>final equivalent circuit</strong> after simplifying a complex resistor network.  </p>
+<ul>
+<li><strong>Nodes (A and D)</strong>: These represent electrical junctions or terminals in the circuit.  </li>
+<li><strong>Edge (30Ω)</strong>: The line between <strong>A</strong> and <strong>D</strong> represents a resistor with a resistance value of <strong>30 ohms (Ω)</strong>.  </li>
+<li><strong>Graph Simplification</strong>: The original circuit likely had multiple resistors connected in <strong>series and parallel</strong>. Through <strong>graph-based circuit analysis</strong>, they were reduced to a single equivalent resistance of <strong>30Ω</strong> between nodes A and D.  </li>
+<li><strong>Visualization</strong>: The large circles at nodes A and D highlight the key connection points in the final simplified circuit.  </li>
+</ul>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
