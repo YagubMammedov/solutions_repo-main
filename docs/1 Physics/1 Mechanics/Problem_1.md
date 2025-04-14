@@ -1,3 +1,7 @@
+Here’s the corrected version with proper LaTeX rendering for mathematical equations and a Python code block for clarity:
+
+---
+
 ### **Mechanics: Investigating the Range as a Function of the Angle of Projection**  
 
 #### **1. Theoretical Foundation**  
@@ -54,8 +58,6 @@ R = \frac{v_0 \cos \theta}{g} \left( v_0 \sin \theta + \sqrt{v_0^2 \sin^2 \theta
 - **Space Exploration:** Modeling low-gravity projectile motion (e.g., on the Moon).  
 
 #### **4. Implementation (Python Simulation)**  
-Below is a Python script to simulate and visualize range vs. angle:  
-
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -81,7 +83,7 @@ plt.legend()
 plt.grid()
 plt.show()
 ```
-
+![alt text](image-4.png)
 #### **Deliverables Summary**  
 - **Mathematical Derivation:** Range equation from Newton's laws.  
 - **Numerical Simulation:** Python code to visualize \( R(\theta) \).  
@@ -93,21 +95,15 @@ plt.show()
 - Study projectile motion on an inclined plane.  
 - Simulate 3D projectile trajectories.  
 
-This analysis bridges theory and computation, demonstrating the versatility of projectile motion in physics and engineering.
-```
-![alt text](image-3.png)
 ---
 
-## 🔍 Observations
+### **Notes on Display Issues**  
+If LaTeX equations or code blocks do not render properly:  
+1. **For Markdown/Notebooks:**  
+   - Use a LaTeX-enabled environment (e.g., Jupyter Notebook, R Markdown).  
+   - Ensure Python code is in a ` ```python ` block.  
+2. **For Plain Text:**  
+   - Replace LaTeX with Unicode (e.g., `sin²θ` for \( \sin^2 \theta \)).  
+   - Indent code blocks manually.  
 
-- The **maximum range** is no longer strictly at 45° if launched from a height.
-- The higher the launch point, the more range increases for **lower angles**.
-- The symmetric nature of the trajectory (like 30° vs 60°) is **broken** when height is involved.
-
----
-
-Would you like me to extend this further by adding:
-- 3D surface plot for \( R(\theta, v_0) \)?
-- Air resistance model?
-- GUI version (e.g., using `streamlit` or `pygame`)?
-
+Let me know if you need further adjustments!
