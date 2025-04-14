@@ -140,6 +140,8 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
+<p>Here’s the corrected version with proper LaTeX rendering for mathematical equations and a Python code block for clarity:</p>
+<hr/>
 <h3 id="mechanics-investigating-the-range-as-a-function-of-the-angle-of-projection"><strong>Mechanics: Investigating the Range as a Function of the Angle of Projection</strong></h3>
 <h4 id="1-theoretical-foundation"><strong>1. Theoretical Foundation</strong></h4>
 <p>Projectile motion is governed by Newton's second law of motion, where the only force acting on the projectile (neglecting air resistance) is gravity. The key assumptions are:<br/>
@@ -190,7 +192,6 @@ R = \frac{v_0 \cos \theta}{g} \left( v_0 \sin \theta + \sqrt{v_0^2 \sin^2 \theta
 <li><strong>Space Exploration:</strong> Modeling low-gravity projectile motion (e.g., on the Moon).  </li>
 </ul>
 <h4 id="4-implementation-python-simulation"><strong>4. Implementation (Python Simulation)</strong></h4>
-<p>Below is a Python script to simulate and visualize range vs. angle:  </p>
 <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 
@@ -215,6 +216,7 @@ plt.legend()
 plt.grid()
 plt.show()
 </code></pre>
+<p><img alt="alt text" src="../image-4.png"/></p>
 <h4 id="deliverables-summary"><strong>Deliverables Summary</strong></h4>
 <ul>
 <li><strong>Mathematical Derivation:</strong> Range equation from Newton's laws.  </li>
@@ -228,21 +230,16 @@ plt.show()
 <li>Study projectile motion on an inclined plane.  </li>
 <li>Simulate 3D projectile trajectories.  </li>
 </ul>
-<p>This analysis bridges theory and computation, demonstrating the versatility of projectile motion in physics and engineering.
-```
-<img alt="alt text" src="../image-3.png"/></p>
 <hr/>
-<h2 id="observations">🔍 Observations</h2>
-<ul>
-<li>The <strong>maximum range</strong> is no longer strictly at 45° if launched from a height.</li>
-<li>The higher the launch point, the more range increases for <strong>lower angles</strong>.</li>
-<li>The symmetric nature of the trajectory (like 30° vs 60°) is <strong>broken</strong> when height is involved.</li>
-</ul>
-<hr/>
-<p>Would you like me to extend this further by adding:
-- 3D surface plot for <span class="arithmatex">\( R(\theta, v_0) \)</span>?
-- Air resistance model?
-- GUI version (e.g., using <code>streamlit</code> or <code>pygame</code>)?</p>
+<h3 id="notes-on-display-issues"><strong>Notes on Display Issues</strong></h3>
+<p>If LaTeX equations or code blocks do not render properly:<br/>
+1. <strong>For Markdown/Notebooks:</strong><br/>
+   - Use a LaTeX-enabled environment (e.g., Jupyter Notebook, R Markdown).<br/>
+   - Ensure Python code is in a <code>```python</code> block.<br/>
+2. <strong>For Plain Text:</strong><br/>
+   - Replace LaTeX with Unicode (e.g., <code>sin²θ</code> for <span class="arithmatex">\( \sin^2 \theta \)</span>).<br/>
+   - Indent code blocks manually.  </p>
+<p>Let me know if you need further adjustments!</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
