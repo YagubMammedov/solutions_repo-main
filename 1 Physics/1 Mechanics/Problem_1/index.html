@@ -48,6 +48,18 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#resolving-initial-velocity">🧭 Resolving Initial Velocity:</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#horizontal-motion">🔹 Horizontal Motion:</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#vertical-motion">🔸 Vertical Motion:</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#time-of-flight">🕒 Time of Flight:</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#horizontal-range">📏 Horizontal Range:</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#maximum-height">⏫ Maximum Height:</a>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Problem 2</a>
@@ -128,33 +140,143 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<p>Great catch! The issue you're seeing is due to using <strong>inline LaTeX formatting</strong> incorrectly in Markdown. When writing LaTeX equations in Markdown (especially in environments like Jupyter Notebooks or Markdown renderers), you need to wrap them properly:</p>
+<p>Əla! Gəlin riyazi hissəni <strong>daha geniş şəkildə</strong>, addım-addım və dərindən izah edək – həm <strong>fiziki mənaları</strong>, həm də <strong>düsturların törəmələrini</strong> daxil edəcəyik. Aşağıdakı bölmədə projectile (atma) hərəkətinin əsas düsturlarını tam şəkildə LaTeX formatında və aydın izahlarla yazıram.</p>
 <hr/>
-<h3 id="correct-markdown-math-formatting">✅ Correct Markdown Math Formatting:</h3>
-<ol>
-<li><strong>Inline equations</strong> — use <strong>single dollar signs</strong>:</li>
-</ol>
-<pre><code class="language-markdown">This is inline math: $x(t) = v_0 \cos(\theta) \cdot t$
-</code></pre>
-<ol>
-<li><strong>Display (block) equations</strong> — use <strong>double dollar signs</strong>:</li>
-</ol>
-<pre><code class="language-markdown">$$
-x(t) = v_0 \cos(\theta) \cdot t
-$$
-</code></pre>
+<h2 id="theoretical-foundation-equations-of-motion">📘 Theoretical Foundation: Equations of Motion</h2>
+<p>We analyze a projectile launched with an initial velocity <span class="arithmatex">\( v_0 \)</span> at an angle <span class="arithmatex">\( \theta \)</span> above the horizontal. We assume:
+- No air resistance,
+- The projectile is launched from and lands at the same vertical level,
+- The only acceleration is due to gravity <span class="arithmatex">\( g \)</span>.</p>
 <hr/>
-<h3 id="heres-your-corrected-markdown-section">🔧 Here's Your Corrected Markdown Section:</h3>
-<pre><code class="language-markdown">### Horizontal Motion (x-direction):
-There is no acceleration (constant velocity):  
-$x(t) = v_0 \cos(\theta) \cdot t$
-
-### Vertical Motion (y-direction):
-There is constant downward acceleration due to gravity:  
-$y(t) = v_0 \sin(\theta) \cdot t - \frac{1}{2} g t^2$
-</code></pre>
-<p>If you're using a Jupyter Notebook or any Markdown file with LaTeX rendering, this format will show the equations beautifully.</p>
-<p>Would you like me to prepare the entire Markdown document for your project with math formatting and code combined?</p>
+<h3 id="resolving-initial-velocity">🧭 Resolving Initial Velocity:</h3>
+<p>The initial velocity has two components:</p>
+<ul>
+<li>
+<p><strong>Horizontal (x-direction)</strong>:
+  $$
+  v_{0x} = v_0 \cos(\theta)
+  $$</p>
+</li>
+<li>
+<p><strong>Vertical (y-direction)</strong>:
+  $$
+  v_{0y} = v_0 \sin(\theta)
+  $$</p>
+</li>
+</ul>
+<hr/>
+<h3 id="horizontal-motion">🔹 Horizontal Motion:</h3>
+<p>No acceleration in the horizontal direction (uniform motion):</p>
+<ul>
+<li>
+<p>Position over time:
+  $$
+  x(t) = v_0 \cos(\theta) \cdot t
+  $$</p>
+</li>
+<li>
+<p>Velocity:
+  $$
+  v_x(t) = v_0 \cos(\theta) = \text{constant}
+  $$</p>
+</li>
+</ul>
+<hr/>
+<h3 id="vertical-motion">🔸 Vertical Motion:</h3>
+<p>There is constant downward acceleration due to gravity:</p>
+<ul>
+<li>
+<p>Position over time:
+  $$
+  y(t) = v_0 \sin(\theta) \cdot t - \frac{1}{2} g t^2
+  $$</p>
+</li>
+<li>
+<p>Velocity over time:
+  $$
+  v_y(t) = v_0 \sin(\theta) - g t
+  $$</p>
+</li>
+<li>
+<p>Acceleration:
+  $$
+  a_y = -g
+  $$</p>
+</li>
+</ul>
+<hr/>
+<h3 id="time-of-flight">🕒 Time of Flight:</h3>
+<p>To find the total time the projectile is in the air, we solve <span class="arithmatex">\( y(T) = 0 \)</span>:</p>
+<div class="arithmatex">\[
+0 = v_0 \sin(\theta) \cdot T - \frac{1}{2} g T^2
+\]</div>
+<p>Factoring out <span class="arithmatex">\( T \neq 0 \)</span>:</p>
+<div class="arithmatex">\[
+T = \frac{2 v_0 \sin(\theta)}{g}
+\]</div>
+<hr/>
+<h3 id="horizontal-range">📏 Horizontal Range:</h3>
+<p>Range is the total horizontal distance traveled during time <span class="arithmatex">\( T \)</span>:</p>
+<div class="arithmatex">\[
+R = v_0 \cos(\theta) \cdot T
+\]</div>
+<p>Substitute <span class="arithmatex">\( T \)</span>:</p>
+<div class="arithmatex">\[
+R = v_0 \cos(\theta) \cdot \left( \frac{2 v_0 \sin(\theta)}{g} \right)
+\]</div>
+<p>Simplify:</p>
+<div class="arithmatex">\[
+R = \frac{v_0^2 \sin(2\theta)}{g}
+\]</div>
+<hr/>
+<h3 id="maximum-height">⏫ Maximum Height:</h3>
+<p>The projectile reaches maximum height when vertical velocity is zero:
+[
+v_y = 0 = v_0 \sin(\theta) - g t
+\Rightarrow t_{\text{max}} = \frac{v_0 \sin(\theta)}{g}
+]</p>
+<p>Now, plug into the vertical position equation:
+[
+H_{\text{max}} = y(t_{\text{max}}) = v_0 \sin(\theta) \cdot \frac{v_0 \sin(\theta)}{g} - \frac{1}{2} g \left( \frac{v_0 \sin(\theta)}{g} \right)^2
+]</p>
+<p>Simplify:</p>
+<div class="arithmatex">\[
+H_{\text{max}} = \frac{v_0^2 \sin^2(\theta)}{2g}
+\]</div>
+<hr/>
+<h2 id="summary-of-key-equations">✅ Summary of Key Equations</h2>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Formula</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Horizontal Position</td>
+<td><span class="arithmatex">\( x(t) = v_0 \cos(\theta) \cdot t \)</span></td>
+</tr>
+<tr>
+<td>Vertical Position</td>
+<td><span class="arithmatex">\( y(t) = v_0 \sin(\theta) \cdot t - \frac{1}{2} g t^2 \)</span></td>
+</tr>
+<tr>
+<td>Time of Flight</td>
+<td><span class="arithmatex">\( T = \frac{2 v_0 \sin(\theta)}{g} \)</span></td>
+</tr>
+<tr>
+<td>Maximum Height</td>
+<td><span class="arithmatex">\( H = \frac{v_0^2 \sin^2(\theta)}{2g} \)</span></td>
+</tr>
+<tr>
+<td>Range</td>
+<td><span class="arithmatex">\( R = \frac{v_0^2 \sin(2\theta)}{g} \)</span></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<p>Would you like me to export all this into a <strong>Markdown (.md)</strong> or <strong>LaTeX (.tex)</strong> file for easy formatting in your project or paper?</p>
 <p><img alt="alt text" src="../image-5.png"/>
 Here's a starting point for your project on projectile motion. The code:</p>
 <p>Derives and plots the horizontal range as a function of the launch angle (from 0° to 90°).</p>
