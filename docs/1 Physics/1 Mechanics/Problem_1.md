@@ -1,7 +1,3 @@
-Əla! Gəlin riyazi hissəni **daha geniş şəkildə**, addım-addım və dərindən izah edək – həm **fiziki mənaları**, həm də **düsturların törəmələrini** daxil edəcəyik. Aşağıdakı bölmədə projectile (atma) hərəkətinin əsas düsturlarını tam şəkildə LaTeX formatında və aydın izahlarla yazıram.
-
----
-
 ## 📘 Theoretical Foundation: Equations of Motion
 
 We analyze a projectile launched with an initial velocity \( v_0 \) at an angle \( \theta \) above the horizontal. We assume:
