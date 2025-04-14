@@ -60,6 +60,8 @@
 </li>
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 3</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#motivation">🎯 Motivation</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -128,252 +130,104 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-3">Problem 3</h1>
-<h1 id="trajectories-of-freely-released-payloads-near-earth"><strong>Trajectories of Freely Released Payloads Near Earth</strong></h1>
-<h2 id="311-key-results-visualization"><strong>3.1.1 Key Results &amp; Visualization</strong></h2>
-<h3 id="simulation-output"><strong>Simulation Output</strong></h3>
-<p><img alt="alt text" src="../image-20.png"/></p>
-<p><strong>Interpretation:</strong>
-- <strong>Circular (7.67 km/s)</strong>: Stable orbit (ISS-like)
-- <strong>Elliptical (9.0 km/s)</strong>: Higher apoapsis
-- <strong>Escape (11.0 km/s)</strong>: Parabolic departure
-- <strong>Hyperbolic (5.83 km/s)</strong>: High-velocity flyby</p>
-<h2 id="314-applications"><strong>3.1.4 Applications</strong></h2>
-<h3 id="space-mission-scenarios"><strong>Space Mission Scenarios</strong></h3>
+<p>Absolutely! Here's a complete breakdown of <strong>Problem 3: Trajectories of a Freely Released Payload Near Earth</strong>, including the theory, physics, Python implementation, and visualization.</p>
+<hr/>
+<h2 id="problem-3-trajectories-of-a-freely-released-payload-near-earth">🌍 <strong>Problem 3: Trajectories of a Freely Released Payload Near Earth</strong></h2>
+<hr/>
+<h3 id="motivation">🎯 Motivation</h3>
+<p>Understanding the motion of a payload released near Earth is essential for:
+- <strong>Satellite deployment</strong>
+- <strong>Orbital insertion</strong>
+- <strong>Escape missions</strong>
+- <strong>Reentry calculations</strong></p>
+<p>This problem explores how gravitational forces and initial velocities shape the trajectory of an object released from a spacecraft.</p>
+<hr/>
+<h2 id="1-theoretical-foundation">1️⃣ Theoretical Foundation</h2>
+<p>We analyze the motion of a payload using <strong>Newton's Law of Universal Gravitation</strong>:</p>
+<div class="arithmatex">\[
+F = \frac{GMm}{r^2}
+\]</div>
+<p>Where:
+- <span class="arithmatex">\( F \)</span> = Gravitational force
+- <span class="arithmatex">\( G \)</span> = Gravitational constant <span class="arithmatex">\( (6.674 \times 10^{-11} \, \text{Nm}^2/\text{kg}^2) \)</span>
+- <span class="arithmatex">\( M \)</span> = Mass of Earth <span class="arithmatex">\( (5.972 \times 10^{24} \, \text{kg}) \)</span>
+- <span class="arithmatex">\( m \)</span> = Mass of payload (cancels in equations of motion)
+- <span class="arithmatex">\( r \)</span> = Distance from Earth's center</p>
+<p>The corresponding <strong>acceleration</strong> of the payload is:</p>
+<div class="arithmatex">\[
+\vec{a} = -\frac{GM}{r^3} \vec{r}
+\]</div>
+<p>This results in <strong>Keplerian orbits</strong>, depending on the total mechanical energy:
+- <strong>Elliptical</strong>: Bound orbit (<span class="arithmatex">\(E &lt; 0\)</span>)
+- <strong>Parabolic</strong>: Escape trajectory at threshold energy (<span class="arithmatex">\(E = 0\)</span>)
+- <strong>Hyperbolic</strong>: Unbound escape trajectory (<span class="arithmatex">\(E &gt; 0\)</span>)</p>
+<hr/>
+<h2 id="2-numerical-simulation">2️⃣ Numerical Simulation</h2>
+<p>We simulate the trajectory using Newton’s second law and integrate using a method like <strong>RK4</strong> or <code>scipy.integrate.solve_ivp</code>.</p>
+<h3 id="equations-of-motion">🧮 Equations of Motion</h3>
+<div class="arithmatex">\[
+\frac{d\vec{v}}{dt} = -\frac{GM}{r^3} \vec{r}, \quad \frac{d\vec{r}}{dt} = \vec{v}
+\]</div>
+<hr/>
+<h2 id="3-python-implementation-with-visualization">3️⃣ Python Implementation (With Visualization)</h2>
+<p><img alt="alt text" src="../image-26.png"/></p>
+<hr/>
+<h2 id="4-analysis-of-trajectories">4️⃣ Analysis of Trajectories</h2>
+<h3 id="types-of-orbits">🌀 Types of Orbits:</h3>
 <ol>
-<li><strong>Satellite Deployment</strong></li>
-<li>Optimal release at perigee for fuel efficiency</li>
-<li>
-<p>Typical Δv &lt; 50 m/s for separation</p>
-</li>
-<li>
-<p><strong>Space Debris Re-entry</strong></p>
-</li>
-<li>Deorbit burns reduce velocity to &lt; 7.6 km/s</li>
-<li>
-<p>Elliptical decay trajectories</p>
-</li>
-<li>
-<p><strong>Lunar/Interplanetary Transfers</strong></p>
-</li>
-<li>Hohmann transfers (elliptical)</li>
-<li>Gravity assists (hyperbolic)</li>
+<li><strong>Elliptical</strong> (e &lt; 1): Sub-orbital or orbital if velocity is below escape speed</li>
+<li><strong>Parabolic</strong> (e = 1): Escape trajectory, <span class="arithmatex">\( v = v_{\text{escape}} = \sqrt{2GM/r} \)</span></li>
+<li><strong>Hyperbolic</strong> (e &gt; 1): Velocity exceeds escape speed</li>
 </ol>
-<h3 id="design-considerations"><strong>Design Considerations</strong></h3>
+<h3 id="try-these-initial-velocities">🔁 Try these initial velocities:</h3>
 <ul>
-<li><strong>Release altitude</strong> affects atmospheric drag</li>
-<li><strong>Velocity vector</strong> determines trajectory shape</li>
-<li><strong>Payload mass</strong> irrelevant in vacuum (all objects fall equally)</li>
+<li><code>v0 = 7800 m/s</code> → Circular/elliptical orbit</li>
+<li><code>v0 = 11186 m/s</code> → Parabolic escape</li>
+<li><code>v0 = 12000 m/s</code> → Hyperbolic escape</li>
 </ul>
 <hr/>
-<h2 id="315-conclusion"><strong>3.1.5 Conclusion</strong></h2>
-<ol>
-<li><strong>Trajectory Types</strong>: Determined by initial velocity and position</li>
-<li><strong>Energy Threshold</strong>: 0 MJ/kg separates bound/unbound orbits</li>
-<li><strong>Mission Planning</strong>: Requires precise Δv calculations</li>
-<li><strong>Numerical Methods</strong>: Essential for accurate predictions</li>
-</ol>
-<p><strong>Extension Ideas</strong>:
-- Add J2 oblateness effects
-- Incorporate atmospheric drag models
-- Simulate multi-body gravity (Moon perturbations)</p>
-<h2 id="321">**3.2.1</h2>
-<p>Here are the orbital mechanics formulas in proper mathematical notation:</p>
-<h3 id="1-newtons-law-of-universal-gravitation"><strong>1. Newton's Law of Universal Gravitation</strong></h3>
-<div class="arithmatex">\[
-\mathbf{F} = -G \frac{m_1 m_2}{r^2} \mathbf{\hat{r}}
-\]</div>
-<h3 id="2-circular-orbital-velocity"><strong>2. Circular Orbital Velocity</strong></h3>
-<div class="arithmatex">\[
-v_{\text{circ}} = \sqrt{\frac{GM}{r}}
-\]</div>
-<h3 id="3-escape-velocity"><strong>3. Escape Velocity</strong></h3>
-<div class="arithmatex">\[
-v_{\text{esc}} = \sqrt{\frac{2GM}{r}} = \sqrt{2} \cdot v_{\text{circ}}
-\]</div>
-<h3 id="4-specific-orbital-energy"><strong>4. Specific Orbital Energy</strong></h3>
-<div class="arithmatex">\[
-\varepsilon = \frac{v^2}{2} - \frac{GM}{r}
-\]</div>
-<h3 id="5-orbital-period-keplers-third-law"><strong>5. Orbital Period (Kepler's Third Law)</strong></h3>
-<div class="arithmatex">\[
-T = 2\pi \sqrt{\frac{a^3}{GM}}
-\]</div>
-<h3 id="6-vis-viva-equation"><strong>6. Vis-Viva Equation</strong></h3>
-<div class="arithmatex">\[
-v^2 = GM \left( \frac{2}{r} - \frac{1}{a} \right)
-\]</div>
-<h3 id="7-eccentricity-vector"><strong>7. Eccentricity Vector</strong></h3>
-<div class="arithmatex">\[
-\mathbf{e} = \frac{\mathbf{v} \times \mathbf{h}}{GM} - \frac{\mathbf{r}}{r}
-\]</div>
-<h3 id="8-angular-momentum"><strong>8. Angular Momentum</strong></h3>
-<div class="arithmatex">\[
-\mathbf{h} = \mathbf{r} \times \mathbf{v}
-\]</div>
-<p><strong>Where:</strong>
-- <span class="arithmatex">\( G \)</span> = Gravitational constant (6.67430 × 10⁻¹¹ m³ kg⁻¹ s⁻²)
-- <span class="arithmatex">\( M \)</span> = Mass of central body (kg)
-- <span class="arithmatex">\( r \)</span> = Distance between centers (m)
-- <span class="arithmatex">\( a \)</span> = Semi-major axis (m)
-- <span class="arithmatex">\( v \)</span> = Orbital velocity (m/s)
-- <span class="arithmatex">\( \mathbf{r}, \mathbf{v} \)</span> = Position and velocity vectors</p>
-<p>These formulas are properly formatted using LaTeX mathematical notation and will:
-1. Copy correctly to any technical document
-2. Render properly in Markdown/LaTeX editors
-3. Maintain clear mathematical formatting
-4. Be easily editable for different scenarios</p>
-<p>Would you like me to:
-1. Add dimensional analysis for each equation?
-2. Provide concrete examples with Earth orbital parameters?
-3. Show the derivation of any particular formula?</p>
-<h3 id="key-parameters">Key Parameters:</h3>
+<h2 id="5-real-world-applications">5️⃣ Real-World Applications</h2>
 <ul>
-<li><span class="arithmatex">\( G \)</span> = 6.674×10⁻¹¹ m³/kg/s² (Gravitational constant)</li>
-<li><span class="arithmatex">\( M \)</span> = Central body mass (kg)</li>
-<li><span class="arithmatex">\( r \)</span> = Orbital radius (m)</li>
-<li><span class="arithmatex">\( a \)</span> = Semi-major axis (m)</li>
-<li><span class="arithmatex">\( v \)</span> = Orbital velocity (m/s)</li>
+<li><strong>Spacecraft orbit insertion</strong>: Determine the correct velocity to maintain orbit</li>
+<li><strong>Satellite reentry</strong>: Reduce speed below orbital threshold</li>
+<li><strong>Escape missions</strong>: Launch probes beyond Earth’s gravitational pull</li>
+<li><strong>Orbital transfers</strong>: Use these principles in Hohmann transfers or interplanetary missions</li>
 </ul>
-<p>These equations will:
-- Copy perfectly to any Markdown editor
-- Render correctly in Jupyter/VSCode/GitHub
-- Maintain clean formatting
-- Work in LaTeX documents</p>
-<h2 id="322-visualization-analysis">**3.2.2 Visualization &amp; Analysis</h2>
-<p>Static Trajectory Plot
-<img alt="alt text" src="../image-21.png"/></p>
-<h3 id="431-fundamental-equations"><strong>4.3.1. Fundamental Equations</strong></h3>
-<h4 id="newtons-law-of-gravitation">Newton's Law of Gravitation</h4>
-<div class="arithmatex">\[
-\mathbf{F} = -\frac{GMm}{r^2}\hat{\mathbf{r}}
-\]</div>
-<h4 id="equations-of-motion-2d">Equations of Motion (2D)</h4>
-<div class="arithmatex">\[
-\begin{cases}
-\dfrac{d^2x}{dt^2} = -\dfrac{GMx}{(x^2+y^2)^{3/2}} \\
-\dfrac{d^2y}{dt^2} = -\dfrac{GMy}{(x^2+y^2)^{3/2}}
-\end{cases}
-\]</div>
-<h3 id="2-velocity-thresholds"><strong>2. Velocity Thresholds</strong></h3>
-<h4 id="circular-orbit-velocity">Circular Orbit Velocity</h4>
-<div class="arithmatex">\[
-v_{\text{circ}} = \sqrt{\dfrac{GM}{r}}
-\]</div>
-<h4 id="escape-velocity">Escape Velocity</h4>
-<div class="arithmatex">\[
-v_{\text{esc}} = \sqrt{\dfrac{2GM}{r}}
-\]</div>
-<h3 id="3-energy-conditions"><strong>3. Energy Conditions</strong></h3>
-<h4 id="specific-orbital-energy">Specific Orbital Energy</h4>
-<div class="arithmatex">\[
-E = \dfrac{v^2}{2} - \dfrac{GM}{r}
-\]</div>
+<hr/>
+<h2 id="6-deliverables-summary">6️⃣ Deliverables Summary</h2>
 <table>
 <thead>
 <tr>
-<th>Energy State</th>
-<th>Trajectory Type</th>
-<th>Mission Scenario</th>
+<th>Deliverable</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><span class="arithmatex">\( E &lt; 0 \)</span></td>
-<td>Elliptical</td>
-<td>Stable orbit</td>
+<td>✅ Markdown Explanation</td>
+<td>Included theory, equations, physical insights</td>
 </tr>
 <tr>
-<td><span class="arithmatex">\( E = 0 \)</span></td>
-<td>Parabolic</td>
-<td>Escape trajectory</td>
+<td>✅ Python Script</td>
+<td>Simulates payload trajectory with gravity</td>
 </tr>
 <tr>
-<td><span class="arithmatex">\( E &gt; 0 \)</span></td>
-<td>Hyperbolic</td>
-<td>Flyby maneuvers</td>
+<td>✅ Graphs</td>
+<td>Visualizes payload path around Earth</td>
+</tr>
+<tr>
+<td>✅ Applications &amp; Analysis</td>
+<td>Connects math to mission planning, reentry, escape</td>
 </tr>
 </tbody>
 </table>
-<h3 id="4-mission-applications"><strong>4. Mission Applications</strong></h3>
-<h4 id="orbital-insertion">Orbital Insertion</h4>
-<div class="arithmatex">\[
-\Delta v_{\text{insert}} = \sqrt{\dfrac{GM}{r}} - v_{\text{current}}
-\]</div>
-<h4 id="deorbit-burn">Deorbit Burn</h4>
-<div class="arithmatex">\[
-\Delta v_{\text{deorbit}} = v_{\text{circ}} - \sqrt{\dfrac{GM}{a_{\text{new}}}}
-\]</div>
-<h4 id="hohmann-transfer">Hohmann Transfer</h4>
-<div class="arithmatex">\[
-\Delta v_{\text{total}} = \sqrt{\dfrac{GM}{r_1}}\left(\sqrt{\dfrac{2r_2}{r_1+r_2}}-1\right) + \sqrt{\dfrac{GM}{r_2}}\left(1-\sqrt{\dfrac{2r_1}{r_1+r_2}}\right)
-\]</div>
-<h3 id="5-atmospheric-reentry"><strong>5. Atmospheric Reentry</strong></h3>
-<h4 id="ballistic-coefficient">Ballistic Coefficient</h4>
-<div class="arithmatex">\[
-\beta = \dfrac{m}{C_d A}
-\]</div>
-<h4 id="deceleration-force">Deceleration Force</h4>
-<div class="arithmatex">\[
-F_{\text{drag}} = \dfrac{1}{2}\rho v^2 C_d A
-\]</div>
-<p>These formulas will:
-1. Copy perfectly to any technical document
-2. Render correctly in Markdown/LaTeX editors
-3. Maintain proper mathematical formatting
-4. Work in Jupyter notebooks and VS Code</p>
-<p><img alt="alt text" src="../image-22.png"/></p>
-<h2 id="44-orbital-trajectory-formulas-short-version"><strong>4.4. </strong>Orbital Trajectory Formulas (Short Version):**</h2>
-<ol>
-<li>
-<p><strong>Gravity Force</strong><br/>
-<code>F = G·M·m / r²</code><br/>
-<em>(G=6.67×10⁻¹¹, M=Earth mass)</em></p>
-</li>
-<li>
-<p><strong>Orbit Speed</strong><br/>
-<code>vₒ = √(GM/r)</code><br/>
-<em>Example: 400km altitude → ~7.7 km/s</em></p>
-</li>
-<li>
-<p><strong>Escape Speed</strong><br/>
-<code>vₑ = √(2GM/r) ≈ 1.414×vₒ</code><br/>
-<em>Same example → ~10.9 km/s</em></p>
-</li>
-<li>
-<p><strong>Trajectory Types</strong>:</p>
-</li>
-<li><code>E &lt; 0</code>: Ellipse (E = ½v² - GM/r)</li>
-<li><code>E = 0</code>: Parabola (escape)</li>
-<li>
-<p><code>E &gt; 0</code>: Hyperbola</p>
-</li>
-<li>
-<p><strong>Orbit Period</strong><br/>
-<code>T = 2π√(a³/GM)</code><br/>
-<em>(a = semi-major axis)</em></p>
-</li>
-</ol>
-<p><strong>Key Numbers (Earth)</strong>:<br/>
-- Radius: 6,371 km<br/>
-- 400km orbit: 7.67 km/s<br/>
-- Escape: 11.2 km/s (surface)</p>
-<p><img alt="alt text" src="../image-23.png"/>
-Key Features:
-Physics Implementation:</p>
-<p>Solves Newton's gravitational equations numerically</p>
-<p>Handles both circular/elliptical orbits and escape trajectories</p>
-<p>Accounts for launch angle and altitude</p>
-<p>Visual Output:</p>
-<p>Shows 4 distinct trajectory types</p>
-<p>Earth drawn to scale (radius ~6371 km)</p>
-<p>Color-coded paths with starting markers</p>
-<p>Includes velocity formulas on plot</p>
-<p>Example Cases:</p>
-<p>Blue: Stable circular orbit (ISS-like, 7.7 km/s)</p>
-<p>Green: Elliptical orbit (8.5 km/s)</p>
-<p>Red: Escape trajectory (11 km/s)</p>
-<p>Orange: Suborbital path (45° launch)</p>
+<hr/>
+<h3 id="extensions-optional">🧠 Extensions (Optional)</h3>
+<ul>
+<li>Add <strong>atmospheric drag</strong> for low altitude motion</li>
+<li>Simulate <strong>multi-body</strong> interactions (e.g., Moon's gravity)</li>
+<li>Include <strong>thrust</strong> for trajectory correction</li>
+</ul>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
