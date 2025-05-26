@@ -84,6 +84,18 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#key-formulas-for-central-limit-theorem">📘 Key Formulas for Central Limit Theorem</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#1-sample-mean">1. Sample Mean</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#2-population-mean-and-standard-deviation">2. Population Mean and Standard Deviation</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#3-standard-error-of-the-mean-sem">3. Standard Error of the Mean (SEM)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#4-central-limit-theorem-statement">4. Central Limit Theorem Statement</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Problem 2</a>
@@ -129,6 +141,63 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<p>Certainly! Below are the <strong>key formulas</strong> related to the <strong>Central Limit Theorem (CLT)</strong> in <strong>clear English</strong> with mathematical expressions. These are foundational for your report or simulation.</p>
+<hr/>
+<h2 id="key-formulas-for-central-limit-theorem">📘 <strong>Key Formulas for Central Limit Theorem</strong></h2>
+<hr/>
+<h3 id="1-sample-mean"><strong>1. Sample Mean</strong></h3>
+<p>The sample mean <span class="arithmatex">\(\bar{x}\)</span> of a sample of size <span class="arithmatex">\(n\)</span> is:</p>
+<div class="arithmatex">\[
+\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i
+\]</div>
+<ul>
+<li><span class="arithmatex">\(x_i\)</span>: the individual data points</li>
+<li><span class="arithmatex">\(n\)</span>: the number of samples</li>
+<li><span class="arithmatex">\(\bar{x}\)</span>: the average (mean) of the sample</li>
+</ul>
+<hr/>
+<h3 id="2-population-mean-and-standard-deviation"><strong>2. Population Mean and Standard Deviation</strong></h3>
+<ul>
+<li>Population mean:</li>
+</ul>
+<div class="arithmatex">\[
+\mu = \mathbb{E}[X]
+\]</div>
+<ul>
+<li>Population standard deviation:</li>
+</ul>
+<div class="arithmatex">\[
+\sigma = \sqrt{\mathbb{E}[(X - \mu)^2]}
+\]</div>
+<p>Where <span class="arithmatex">\(\mathbb{E}\)</span> represents the expected value.</p>
+<hr/>
+<h3 id="3-standard-error-of-the-mean-sem"><strong>3. Standard Error of the Mean (SEM)</strong></h3>
+<p>As the sample size increases, the standard deviation of the sample mean (called the <strong>standard error</strong>) decreases:</p>
+<div class="arithmatex">\[
+\text{SEM} = \frac{\sigma}{\sqrt{n}}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(\sigma\)</span>: population standard deviation</li>
+<li><span class="arithmatex">\(n\)</span>: sample size</li>
+</ul>
+<hr/>
+<h3 id="4-central-limit-theorem-statement"><strong>4. Central Limit Theorem Statement</strong></h3>
+<p>Let <span class="arithmatex">\(x_1, x_2, ..., x_n\)</span> be i.i.d. random variables from any distribution with mean <span class="arithmatex">\(\mu\)</span> and variance <span class="arithmatex">\(\sigma^2\)</span>. Then the sampling distribution of the sample mean <span class="arithmatex">\(\bar{x}\)</span> converges in distribution to a normal distribution as <span class="arithmatex">\(n \to \infty\)</span>:</p>
+<div class="arithmatex">\[
+\bar{x} \xrightarrow{d} \mathcal{N}(\mu, \frac{\sigma^2}{n})
+\]</div>
+<p>This means:</p>
+<ul>
+<li>The <strong>sampling distribution</strong> of the mean becomes <strong>approximately normal</strong></li>
+<li>Even if the <strong>original data is not normal</strong></li>
+<li>Provided that the <strong>sample size <span class="arithmatex">\(n\)</span> is large enough</strong></li>
+</ul>
+<p><img alt="alt text" src="../image.png"/></p>
+<p>Generate populations: Creates large datasets from three different distributions — Uniform, Exponential, and Binomial.</p>
+<p>Take samples: For each distribution, repeatedly takes many samples of different sizes (5, 10, 30, 50).</p>
+<p>Calculate sample means: Computes the mean of each sample to build the sampling distribution of the sample mean.</p>
+<p>Plot histograms: Shows histograms of the sample means for each sample size and distribution.</p>
+<p>Overlay normal curve: Plots the theoretical normal distribution based on the population mean and standard error on top of the histogram.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
