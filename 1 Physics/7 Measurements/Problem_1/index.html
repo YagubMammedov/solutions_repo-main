@@ -92,6 +92,22 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#experiment-title">🧪 Experiment Title:</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#objective">🎯 Objective:</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#materials-needed">🔧 Materials Needed:</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#procedure-overview">🛠️ Procedure Overview:</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#calculations">📐 Calculations:</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#analysis">🔍 Analysis:</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#deliverables-in-markdown-table-format">📊 Deliverables (in Markdown Table Format):</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#graph-explanation">🧾 Graph Explanation:</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -129,6 +145,137 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<p>Thank you for sharing your task images. Based on the instructions and formulas shown in the pendulum experiment, here's a structured English summary with the appropriate formulas you’ll need to complete your work:</p>
+<hr/>
+<h3 id="experiment-title">🧪 <strong>Experiment Title</strong>:</h3>
+<p><strong>Measuring Earth’s Gravitational Acceleration Using a Pendulum</strong></p>
+<hr/>
+<h3 id="objective">🎯 <strong>Objective</strong>:</h3>
+<p>To measure the acceleration due to gravity, <span class="arithmatex">\(g\)</span>, using a simple pendulum and to analyze the uncertainties in the measurements.</p>
+<hr/>
+<h3 id="materials-needed">🔧 <strong>Materials Needed</strong>:</h3>
+<ul>
+<li>A string (1 or 1.5 meters)</li>
+<li>A small weight (e.g., bag of coins)</li>
+<li>Stopwatch or smartphone timer</li>
+<li>Ruler or measuring tape</li>
+</ul>
+<hr/>
+<h3 id="procedure-overview">🛠️ <strong>Procedure Overview</strong>:</h3>
+<ol>
+<li>
+<p><strong>Set up the pendulum</strong>:</p>
+</li>
+<li>
+<p>Attach the weight to one end of the string and fix the other end to a stable support.</p>
+</li>
+<li>Measure the pendulum length, <span class="arithmatex">\(L\)</span>, from the suspension point to the center of mass of the weight.</li>
+<li>
+<p>Calculate length uncertainty:</p>
+<p>$$
+ \Delta L = \frac{\text{Ruler Resolution}}{2}
+ $$</p>
+</li>
+<li>
+<p><strong>Collect data</strong>:</p>
+</li>
+<li>
+<p>Displace the pendulum slightly (under 15°) and release it.</p>
+</li>
+<li>Measure the time for 10 full oscillations (<span class="arithmatex">\(T_{10}\)</span>) and repeat this 10 times.</li>
+<li>
+<p>Calculate the <strong>mean time</strong> for 10 oscillations:</p>
+<p>$$
+ \overline{T_{10}} = \frac{1}{10} \sum T_{10}
+ $$
+   * Calculate the <strong>standard deviation</strong>, <span class="arithmatex">\(\sigma_T\)</span>, of the 10 trials.
+   * Calculate <strong>uncertainty in mean time</strong>:</p>
+<p>$$
+ \Delta T_{10} = \frac{\sigma_T}{\sqrt{n}} \quad \text{where } n = 10
+ $$</p>
+</li>
+</ol>
+<hr/>
+<h3 id="calculations">📐 <strong>Calculations</strong>:</h3>
+<ol>
+<li><strong>Calculate the Period <span class="arithmatex">\(T\)</span></strong>:</li>
+</ol>
+<p>$$
+   T = \frac{\overline{T_{10}}}{10} \quad ; \quad \Delta T = \frac{\Delta T_{10}}{10}
+   $$</p>
+<ol>
+<li><strong>Calculate the gravitational acceleration <span class="arithmatex">\(g\)</span></strong>:</li>
+</ol>
+<p>$$
+   g = \frac{4\pi^2 L}{T^2}
+   $$</p>
+<ol>
+<li><strong>Propagate the uncertainty <span class="arithmatex">\(\Delta g\)</span></strong>:</li>
+</ol>
+<p>$$
+   \Delta g = g \sqrt{\left( \frac{\Delta L}{L} \right)^2 + \left( 2 \cdot \frac{\Delta T}{T} \right)^2}
+   $$</p>
+<hr/>
+<h3 id="analysis">🔍 <strong>Analysis</strong>:</h3>
+<ul>
+<li>Compare your measured value of <span class="arithmatex">\(g\)</span> with the standard value: <strong>9.81 m/s²</strong>.</li>
+<li>
+<p>Discuss:</p>
+</li>
+<li>
+<p>How ruler resolution affected <span class="arithmatex">\(\Delta L\)</span>.</p>
+</li>
+<li>How timing variability affected <span class="arithmatex">\(\Delta T\)</span>.</li>
+<li>Possible experimental errors or assumptions (e.g., small angle approximation).</li>
+</ul>
+<hr/>
+<h3 id="deliverables-in-markdown-table-format">📊 <strong>Deliverables</strong> (in Markdown Table Format):</h3>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Symbol</th>
+<th>Value</th>
+<th>Uncertainty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Length of Pendulum</td>
+<td><span class="arithmatex">\(L\)</span></td>
+<td>... m</td>
+<td><span class="arithmatex">\(\Delta L\)</span></td>
+</tr>
+<tr>
+<td>Time for 10 oscillations</td>
+<td><span class="arithmatex">\(T_{10}\)</span></td>
+<td>... s</td>
+<td><span class="arithmatex">\(\sigma_T\)</span></td>
+</tr>
+<tr>
+<td>Period</td>
+<td><span class="arithmatex">\(T\)</span></td>
+<td>... s</td>
+<td><span class="arithmatex">\(\Delta T\)</span></td>
+</tr>
+<tr>
+<td>Gravity</td>
+<td><span class="arithmatex">\(g\)</span></td>
+<td>... m/s²</td>
+<td><span class="arithmatex">\(\Delta g\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="alt text" src="../image.png"/></p>
+<p>Sure! Here's a <strong>short explanation in English</strong> of the graph generated by the code:</p>
+<hr/>
+<h3 id="graph-explanation">🧾 <strong>Graph Explanation</strong>:</h3>
+<p>The graph shows the <strong>measured time for 10 oscillations</strong> over 10 trials.</p>
+<ul>
+<li><strong>Blue dots and line</strong>: The actual time measurements recorded in each trial.</li>
+<li><strong>Red dashed line</strong>: The <strong>mean value</strong> of the time measurements.</li>
+<li><strong>Shaded red area</strong>: The <strong>±1 standard deviation</strong> range, showing the spread (variation) of the data.</li>
+</ul>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
